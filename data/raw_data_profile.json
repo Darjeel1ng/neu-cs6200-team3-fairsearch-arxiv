@@ -1,0 +1,28 @@
+{
+  "generated_at_utc": "2026-06-12T05:15:16.071999+00:00",
+  "dataset_source": "Cornell-University/arxiv/versions/289",
+  "dataset_path": "C:\\Users\\Darjeel1ng\\.cache\\kagglehub\\datasets\\Cornell-University\\arxiv\\versions\\289",
+  "json_file_path": "C:\\Users\\Darjeel1ng\\.cache\\kagglehub\\datasets\\Cornell-University\\arxiv\\versions\\289\\arxiv-metadata-oai-snapshot.json",
+  "required_fields": [
+    "id",
+    "title",
+    "abstract",
+    "authors",
+    "categories",
+    "versions",
+    "update_date"
+  ],
+  "required_fields_check_passed": true,
+  "profile": {
+    "total_records": 3066190,
+    "cs_records": 955380.0,
+    "non_cs_records": 2110810.0,
+    "missing_title": 0.0,
+    "missing_abstract": 0.0,
+    "missing_authors": 0.0,
+    "missing_versions": 0.0,
+    "missing_update_date": 0.0,
+    "earliest_update": "2007-05-23 00:00:00",
+    "latest_update": "2026-06-05 00:00:00"
+  }
+}

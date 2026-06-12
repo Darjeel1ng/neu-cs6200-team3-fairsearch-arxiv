@@ -1,0 +1,42 @@
+{
+  "generated_at_utc": "2026-06-12T07:43:15.438422+00:00",
+  "target_valid_size": 50000,
+  "target_reached": true,
+  "max_new_lookups_this_run": null,
+  "candidate_pool_path": "data\\cs_candidate_pool.parquet",
+  "output_path": "data\\final_50k_with_institution.parquet",
+  "openalex_cache_path": "data\\openalex_gate_cache.json",
+  "candidate_count": 955379,
+  "selected_count": 50000,
+  "query_batches_this_run": 7398,
+  "query_attempts_this_run": 330230,
+  "retried_batches_this_run": 0,
+  "title_searches_this_run": 0,
+  "new_ok_this_run": 39174,
+  "new_transient_fail_this_run": 0,
+  "new_permanent_fail_this_run": 291041,
+  "ok_by_strategy_this_run": {
+    "openalex_published_doi": 33900,
+    "openalex_arxiv_doi": 5274,
+    "openalex_title_search": 0
+  },
+  "recovered_ok_from_output": 2218,
+  "recovered_ok_from_cache": 8608,
+  "cache_status_counts": {
+    "permanent_fail": 308782,
+    "ok": 50000
+  },
+  "selected_source_counts": {
+    "openalex_published_doi": 39359,
+    "openalex_arxiv_doi": 8600,
+    "<NA>": 2032,
+    "openalex_raw_affiliation": 5,
+    "author_text_regex": 4
+  },
+  "selected_tier_counts": {
+    "A": 47959,
+    "<NA>": 2032,
+    "B": 5,
+    "C": 4
+  }
+}

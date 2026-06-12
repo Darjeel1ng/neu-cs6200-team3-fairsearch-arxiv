@@ -1,0 +1,63 @@
+{
+  "generated_at_utc": "2026-06-12T08:03:55.425739+00:00",
+  "input_path": "data\\final_50k_with_institution.parquet",
+  "output_path": "data\\final_50k_cleaned.parquet",
+  "row_count": 50000,
+  "optional_columns_kept": [
+    "openalex_primary_institution",
+    "openalex_country_code",
+    "institution_source",
+    "institution_confidence_tier",
+    "selection_rank"
+  ],
+  "cleaning_rules": {
+    "html_tags_removed": true,
+    "control_characters_removed": true,
+    "whitespace_normalized": true
+  },
+  "normalization_rules": {
+    "year_from": "update_date",
+    "primary_category": "first cs.* token, fallback first token, else unknown",
+    "document_id": "canonical arxiv id (version suffix removed), hash fallback for empty ids"
+  },
+  "validation": {
+    "row_count": 50000,
+    "expected_rows": 50000,
+    "document_id_unique": true,
+    "null_or_empty_counts": {
+      "cleaned_title": 0,
+      "cleaned_abstract": 0,
+      "year": 0,
+      "primary_category": 0,
+      "document_id": 0
+    },
+    "length_stats": {
+      "cleaned_title_chars": {
+        "min": 10,
+        "median": 82.0,
+        "max": 241
+      },
+      "cleaned_abstract_chars": {
+        "min": 44,
+        "median": 1193.0,
+        "max": 4080
+      }
+    },
+    "year_range": {
+      "min": 2024,
+      "max": 2026
+    },
+    "top_primary_categories": {
+      "cs.NA": 8226,
+      "cs.LG": 6952,
+      "cs.CV": 5662,
+      "cs.SY": 3868,
+      "cs.RO": 2822,
+      "cs.HC": 2423,
+      "cs.AI": 2373,
+      "cs.CL": 1996,
+      "cs.CR": 1776,
+      "cs.IT": 1390
+    }
+  }
+}

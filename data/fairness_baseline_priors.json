@@ -1,0 +1,34 @@
+{
+  "n_documents": 50000,
+  "privilege_prior": {
+    "underrepresented": 0.82894,
+    "privileged": 0.17106
+  },
+  "region_prior": {
+    "Europe": 0.43056,
+    "North America": 0.27014,
+    "Asia": 0.25266,
+    "Oceania": 0.02306,
+    "South America": 0.0149,
+    "Africa": 0.00524,
+    "Unknown": 0.00344
+  },
+  "privilege_representation_vs_uniform": {
+    "underrepresented": 1.65788,
+    "privileged": 0.34212
+  },
+  "region_representation_vs_uniform": {
+    "Europe": 3.01392,
+    "North America": 1.89098,
+    "Asia": 1.76862,
+    "Oceania": 0.16142,
+    "South America": 0.1043,
+    "Africa": 0.036680000000000004,
+    "Unknown": 0.02408
+  },
+  "privileged_to_underrepresented_ratio": 0.2063599295485801,
+  "institution_gini": 0.7524784638706418,
+  "country_gini": 0.8654155989043115,
+  "top10_institution_share": 0.0643,
+  "top50_institution_share": 0.20784
+}

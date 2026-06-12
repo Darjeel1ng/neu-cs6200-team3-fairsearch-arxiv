@@ -1,0 +1,4 @@
+# Large data artifacts are stored via Git LFS.
+# After cloning, run `git lfs install` once, then `git lfs pull`.
+data/*.parquet filter=lfs diff=lfs merge=lfs -text
+data/openalex_gate_cache.json filter=lfs diff=lfs merge=lfs -text

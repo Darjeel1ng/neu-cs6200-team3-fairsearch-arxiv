@@ -1,0 +1,95 @@
+dimension,group,count,ratio
+year,2025,20576.0,0.41152
+year,2026,20409.0,0.40818
+year,2024,9015.0,0.1803
+primary_category,cs.NA,8226.0,0.16452
+primary_category,cs.LG,6952.0,0.13904
+primary_category,cs.CV,5662.0,0.11324
+primary_category,cs.SY,3868.0,0.07736
+primary_category,cs.RO,2822.0,0.05644
+primary_category,cs.HC,2423.0,0.04846
+primary_category,cs.AI,2373.0,0.04746
+primary_category,cs.CL,1996.0,0.03992
+primary_category,cs.CR,1776.0,0.03552
+primary_category,cs.IT,1390.0,0.0278
+primary_category,cs.SE,1194.0,0.02388
+primary_category,cs.CY,983.0,0.01966
+primary_category,cs.DC,956.0,0.01912
+primary_category,cs.NI,900.0,0.018
+primary_category,cs.IR,782.0,0.01564
+primary_category,cs.CE,749.0,0.01498
+primary_category,cs.LO,717.0,0.01434
+primary_category,cs.SI,608.0,0.01216
+primary_category,cs.SD,501.0,0.01002
+primary_category,cs.DS,473.0,0.00946
+region,Europe,21528.0,0.43056
+region,North America,13507.0,0.27014
+region,Asia,12633.0,0.25266
+region,Oceania,1153.0,0.02306
+region,South America,745.0,0.0149
+region,Africa,262.0,0.00524
+region,Unknown,172.0,0.00344
+country_code,US,11852.0,0.23704
+country_code,CN,5672.0,0.11344
+country_code,DE,4215.0,0.0843
+country_code,FR,3631.0,0.07262
+country_code,GB,2579.0,0.05158
+country_code,IT,2139.0,0.04278
+country_code,CA,1519.0,0.03038
+country_code,JP,1479.0,0.02958
+country_code,ES,1216.0,0.02432
+country_code,IN,1074.0,0.02148
+country_code,AU,1054.0,0.02108
+country_code,NL,1036.0,0.02072
+country_code,CH,917.0,0.01834
+country_code,KR,801.0,0.01602
+country_code,AT,735.0,0.0147
+country_code,SE,726.0,0.01452
+country_code,HK,662.0,0.01324
+country_code,SG,549.0,0.01098
+country_code,BE,499.0,0.00998
+country_code,RU,484.0,0.00968
+country_code,BR,479.0,0.00958
+country_code,DK,419.0,0.00838
+country_code,PL,389.0,0.00778
+country_code,NO,357.0,0.00714
+country_code,IL,346.0,0.00692
+privilege_label,underrepresented,41447.0,0.82894
+privilege_label,privileged,8553.0,0.17106
+is_top50_institution,non_top50,41447.0,0.82894
+is_top50_institution,top50,8553.0,0.17106
+institution_confidence_tier,A,47959.0,0.95918
+institution_confidence_tier,<NA>,2032.0,0.04064
+institution_confidence_tier,B,5.0,0.0001
+institution_confidence_tier,C,4.0,8e-05
+institution_top25,Centre National de la Recherche Scientifique,660.0,0.0132
+institution_top25,Technical University of Munich,353.0,0.00706
+institution_top25,Tsinghua University,316.0,0.00632
+institution_top25,ETH Zurich,312.0,0.00624
+institution_top25,Carnegie Mellon University,300.0,0.006
+institution_top25,University of Illinois Urbana-Champaign,265.0,0.0053
+institution_top25,KTH Royal Institute of Technology,255.0,0.0051
+institution_top25,Delft University of Technology,255.0,0.0051
+institution_top25,Georgia Institute of Technology,250.0,0.005
+institution_top25,Massachusetts Institute of Technology,249.0,0.00498
+institution_top25,Peking University,239.0,0.00478
+institution_top25,The University of Texas at Austin,227.0,0.00454
+institution_top25,Shanghai Jiao Tong University,226.0,0.00452
+institution_top25,The University of Tokyo,224.0,0.00448
+institution_top25,University of Michigan,223.0,0.00446
+institution_top25,National University of Singapore,217.0,0.00434
+institution_top25,"University of California, Berkeley",216.0,0.00432
+institution_top25,Imperial College London,214.0,0.00428
+institution_top25,University of Oxford,210.0,0.0042
+institution_top25,Cornell University,201.0,0.00402
+institution_top25,École Polytechnique Fédérale de Lausanne,199.0,0.00398
+institution_top25,Purdue University West Lafayette,196.0,0.00392
+institution_top25,Hong Kong University of Science and Technology,195.0,0.0039
+institution_top25,Stanford University,194.0,0.00388
+institution_top25,Eindhoven University of Technology,190.0,0.0038
+concentration,distinct_institutions,,5937.0
+concentration,distinct_countries,,137.0
+concentration,top10_institution_share,,0.0643
+concentration,top50_institution_share,,0.20784
+concentration,institution_gini,,0.7524784638706418
+concentration,country_gini,,0.8654155989043115

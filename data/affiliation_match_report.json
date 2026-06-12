@@ -1,0 +1,39 @@
+{
+  "generated_at_utc": "2026-06-12T08:25:40.182768+00:00",
+  "input_path": "data\\final_50k_cleaned.parquet",
+  "qs_top50_path": "c:\\Users\\Darjeel1ng\\OneDrive - Northeastern University\\Attachments\\cs 6200\\project\\qs-top50-cs-universities.txt",
+  "output_path": "data\\final_50k_labeled.parquet",
+  "row_count": 50000,
+  "optional_columns_kept": [
+    "openalex_primary_institution",
+    "openalex_country_code",
+    "institution_source",
+    "institution_confidence_tier",
+    "selection_rank"
+  ],
+  "institution_coverage": 1.0,
+  "country_coverage": 0.99698,
+  "region_coverage": 0.99656,
+  "top50_match_count": 8553,
+  "privilege_label_distribution": {
+    "underrepresented": 41447,
+    "privileged": 8553
+  },
+  "top_matched_institutions": {
+    "Centre National de la Recherche Scientifique": 660,
+    "Technical University of Munich": 353,
+    "Tsinghua University": 316,
+    "ETH Zurich": 312,
+    "Carnegie Mellon University": 300,
+    "University of Illinois Urbana-Champaign": 265,
+    "KTH Royal Institute of Technology": 255,
+    "Delft University of Technology": 255,
+    "Georgia Institute of Technology": 250,
+    "Massachusetts Institute of Technology": 249,
+    "Peking University": 239,
+    "The University of Texas at Austin": 227,
+    "Shanghai Jiao Tong University": 226,
+    "The University of Tokyo": 224,
+    "University of Michigan": 223
+  }
+}

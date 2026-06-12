@@ -1,0 +1,30 @@
+{
+  "generated_at_utc": "2026-06-12T08:02:56.637275+00:00",
+  "dataset_source": "Cornell-University/arxiv/versions/289",
+  "dataset_path": "C:\\Users\\Darjeel1ng\\.cache\\kagglehub\\datasets\\Cornell-University\\arxiv\\versions\\289",
+  "json_file_path": "C:\\Users\\Darjeel1ng\\.cache\\kagglehub\\datasets\\Cornell-University\\arxiv\\versions\\289\\arxiv-metadata-oai-snapshot.json",
+  "save_eligible_pool": false,
+  "eligible_pool_path": null,
+  "candidate_pool_path": "data\\cs_candidate_pool.parquet",
+  "final_corpus_path": "data\\final_50k_with_institution.parquet",
+  "openalex_gate_cache_path": "data\\openalex_gate_cache.json",
+  "openalex_gate_report_path": "data\\openalex_gate_report.json",
+  "target_valid_size": 50000,
+  "sample_seed": 42,
+  "counts": {
+    "total_records": 3066190,
+    "cs_records": 955380,
+    "cs_ids_with_version_suffix": 0,
+    "dropped_missing_fields": 0,
+    "cs_with_non_empty_text": 955380,
+    "dropped_duplicates": 1,
+    "candidate_pool_size": 955379,
+    "final_valid_corpus_size": 50000
+  },
+  "rules": {
+    "cs_filter": "categories LIKE 'cs.%' OR categories LIKE '% cs.%'",
+    "text_filter": "title and abstract non-null and non-empty",
+    "dedup": "canonical_id = regexp_replace(id, 'v[0-9]+$', ''), keep latest update_date",
+    "openalex_gate": "batch DOI lookup with transient retry and institution-required selection"
+  }
+}
