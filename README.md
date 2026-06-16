@@ -1,17 +1,14 @@
 # neu-cs6200-team3-fairsearch-arxiv
 
-Working notes for the FairSearch-arXiv project. Phases 1-4 (data pipeline) are
-done and their outputs are committed here so the next person can start Phase 5
-(ChromaDB index + retrieval-fairness analysis) **without re-running the slow
-data-prep steps**. Everything below is a quick reference, not a formal report.
+Working notes for the FairSearch-arXiv project. Phases 1-5 (data pipeline) are
+done and their outputs are committed here. Everything below is a quick reference, not a formal report.
 
 ---
 
 ## TL;DR for whoever picks this up
 
 - All code lives in `work_notebook.ipynb`, organized as Phase 1 -> Phase 5.
-- Phases 1-4 have already been run; the resulting corpus + reports are in `data/`.
-- Phase 5 onward is **not done yet** and is left for you.
+- Phases 1-5 have already been run; the resulting corpus + reports are in `data/`.
 - The single most important file is **`data/final_50k_labeled.parquet`** - the
   final 50K corpus with cleaned text + institution + region + fairness labels.
   That is the direct input for Phase 5.
@@ -42,6 +39,7 @@ pointer stubs instead of real data.
 - `text_cleaning_report.json` (Phase 2)
 - `affiliation_match_report.json`, `institution_alias_map.csv`, `label_distribution.csv` (Phase 3)
 - `final_corpus_statistics.csv`, `fairness_baseline_priors.json`, `corpus_summary.md`, `figures/*.png` (Phase 4)
+- `chroma_db/`, `chroma_ingestion_report.json`, `sample_retrieval_results.md`, `index_config.yaml` (phase 5)
 
 These let you sanity-check each phase without opening the parquet files.
 
@@ -52,7 +50,7 @@ These let you sanity-check each phase without opening the parquet files.
   files from older notebook versions, not used by the current pipeline.
 - `openalex_gate_cache.json.{bak,broken,corrupt}`, `*.salvaged.json`, `_*.txt` -
   cache backups / debug scratch.
-- `chroma_db`, 800MB plus, can easily run in phase 5
+- `chroma_db` folder, 800MB plus, too big to push github, this can easily run in phase 5
 
 ---
 
@@ -60,10 +58,11 @@ These let you sanity-check each phase without opening the parquet files.
 
 The notebook caches aggressively, so re-running is cheap:
 
-- **Re-run Phase 2->5 from scratch:** keep `final_50k_with_institution.parquet`,
-  run the Phase 2, 3, 4, 5cells in order. No network needed (Phase 3 uses the
+- **Re-run Phase 2->4 from scratch:** keep `final_50k_with_institution.parquet`,
+  run the Phase 2, 3, 4 cells in order. No network needed (Phase 3 uses the
   OpenAlex institution already carried in the Phase 1 output; it only
   canonicalizes against the local QS Top-50 list).
+- **Re-run phase 5 from scratch** `final_50k_labeled.parquet` is the only file needed in this phase, just run the cell one by one in order.
 - **Re-run Phase 1:** you need to download the Kaggle snapshot (the notebook does
   this via `kagglehub`) and rebuild the candidate pool. With
   `openalex_gate_cache.json` present, the OpenAlex gate is served from cache, so
