@@ -1,0 +1,7 @@
+{
+    "num_documents": 50000,
+    "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "embedding_dimension": 384,
+    "distance_metric": "cosine",
+    "ingestion_time_seconds": 245.54285597801208
+}

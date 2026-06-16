@@ -1,0 +1,5 @@
+collection_name: cs50k_collection
+distance_metric: cosine
+document_field: title + abstract
+embedding_dimension: 384
+embedding_model: sentence-transformers/all-MiniLM-L6-v2

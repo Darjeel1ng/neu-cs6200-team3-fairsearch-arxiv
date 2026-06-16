@@ -1,7 +1,5 @@
 .venv
 venv
-/data
-.parquet
 .ipynb_checkpoints
 chroma_db
 .DS_Store
