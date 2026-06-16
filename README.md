@@ -52,6 +52,7 @@ These let you sanity-check each phase without opening the parquet files.
   files from older notebook versions, not used by the current pipeline.
 - `openalex_gate_cache.json.{bak,broken,corrupt}`, `*.salvaged.json`, `_*.txt` -
   cache backups / debug scratch.
+- `chroma_db`, 800MB plus, can easily run in phase 5
 
 ---
 
@@ -59,8 +60,8 @@ These let you sanity-check each phase without opening the parquet files.
 
 The notebook caches aggressively, so re-running is cheap:
 
-- **Re-run Phase 2->4 from scratch:** keep `final_50k_with_institution.parquet`,
-  run the Phase 2, 3, 4 cells in order. No network needed (Phase 3 uses the
+- **Re-run Phase 2->5 from scratch:** keep `final_50k_with_institution.parquet`,
+  run the Phase 2, 3, 4, 5cells in order. No network needed (Phase 3 uses the
   OpenAlex institution already carried in the Phase 1 output; it only
   canonicalizes against the local QS Top-50 list).
 - **Re-run Phase 1:** you need to download the Kaggle snapshot (the notebook does
@@ -73,7 +74,7 @@ from the project parent folder. It's gitignored - set up your own.
 
 ---
 
-## Pipeline overview (Phase 1-4)
+## Pipeline overview (Phase 1-5)
 
 Fixed data source: Kaggle `Cornell-University/arxiv` **version 289** snapshot
 (3,066,190 records). Target corpus size: **50,000**. Seed: 42.
@@ -122,6 +123,12 @@ real institution to (so the fairness labels in Phase 3 are meaningful).
 - Result: `final_corpus_statistics.csv`, `fairness_baseline_priors.json`,
   `corpus_summary.md`, `data/figures/*.png`.
 
+### Phase 5 - ChromaDB Index Construction and Retrieval Smoke Test
+- Select sentence-transformers/all-MiniLM-L6-v2 as the embedding model and generate document embeddings from `final_50k_labeled.parquet` dataset.
+- Write the cleaned/labeled 50K corpus into ChromaDB and confirm the index is usable for later RAG experiments.
+- Perform 20 (k = 5, 10, 20) smoke-test with 4 queries, and confirm top-10 returns plus metadata/filter functionality.
+- Manually assess retrieval relevance based on paper titles and abstracts, and compute retrieval metrics including Precision@k and Recall@k for each query.
+- Result: `chroma_db/`, `chroma_ingestion_report.json`, `sample_retrieval_results.md`, `index_config.yaml`.
 ---
 
 ## Key results (the 50K corpus)
@@ -147,14 +154,3 @@ real institution to (so the fairness labels in Phase 3 are meaningful).
 **Top institutions:** CNRS (660), TU Munich (353), Tsinghua (316), ETH Zurich (312), CMU (300)...
 
 (See `data/corpus_summary.md` and `data/figures/` for the full picture.)
-
----
-
-## What's left (Phase 5+)
-
-- **Phase 5** (not started): write the cleaned/labeled 50K corpus into ChromaDB,
-  verify count = 50,000, run smoke-test retrieval queries. Expected outputs:
-  `chroma_db/`, `chroma_ingestion_report.json`, `sample_retrieval_results.md`,
-  `index_config.yaml`.
-- After that: retrieval-fairness analysis (TF-IDF baseline + dense retriever vs.
-  the Phase 4 priors).
