@@ -153,3 +153,62 @@ real institution to (so the fairness labels in Phase 3 are meaningful).
 **Top institutions:** CNRS (660), TU Munich (353), Tsinghua (316), ETH Zurich (312), CMU (300)...
 
 (See `data/corpus_summary.md` and `data/figures/` for the full picture.)
+
+---
+
+## Roadmap (Phase 6+)
+
+Phases 1-5 build the labeled corpus, fairness priors, and ChromaDB index. The
+phases below cover the RAG-fairness pipeline described in the two project reports
+(retrieval audit, MMR mitigation, synthesis faithfulness). Each phase lists its
+goal, expected inputs, and expected outputs.
+
+### Phase 6 - RAG retrieval pipeline (LlamaIndex + ChromaDB)
+- **Goal:** Wrap the Phase 5 index into a query engine / retriever for the audits.
+- **Tasks:** Load the Chroma index into a LlamaIndex `VectorStoreIndex`, keep the
+  embedding model consistent with the index, expose a baseline top-k retriever
+  with over-fetch headroom (e.g. fetch 20, re-rank to 10).
+- **In:** `chroma_db/`, `index_config.yaml`.
+- **Out:** retrieval pipeline config + sample retrieval output.
+
+### Phase 7 - Bias-audit query benchmark
+- **Goal:** Build the 150-query evaluation set.
+- **Tasks:** Generate 100 neutral queries across CS subfields from stratified
+  abstracts, curate 50 contradictory/debate queries, verify query privilege
+  share vs. corpus baseline.
+- **In:** `final_50k_labeled.parquet`, retrieval pipeline.
+- **Out:** `queries.json`, `query_benchmark_report.json`.
+
+### Phase 8 - Experiment A: retrieval parity audit (RQ1)
+- **Goal:** Measure institutional homophily in baseline retrieval.
+- **Tasks:** Run top-k retrieval over the 150 queries, tag results with
+  privilege/region metadata, compute SPD and SRR against the Phase 4 priors,
+  break down by query category.
+- **In:** `queries.json`, retrieval pipeline, `fairness_baseline_priors.json`.
+- **Out:** `naive_retrieval_results.json`, `retrieval_parity_report.json`, figures.
+
+### Phase 9 - Fairness-aware MMR re-ranking + lambda ablation (RQ3)
+- **Goal:** Mitigate institutional over/under-representation and quantify the
+  fairness-utility tradeoff.
+- **Tasks:** Implement a three-signal MMR re-ranker (relevance / diversity /
+  fairness), sweep lambda configs, re-rank top-20 to top-10, measure nDCG@10 /
+  P@10 / MRR plus unique institutions/countries and SPD/SRR.
+- **In:** Phase 8 retrieval results, `fairness_baseline_priors.json`.
+- **Out:** `mmr_reranked_results.json`, `lambda_ablation.csv`, tradeoff figures.
+
+### Phase 10 - Experiment B: generative faithfulness + synthesis bias (RQ2)
+- **Goal:** Assess whether LLM synthesis faithfully represents retrieved
+  viewpoints and whether it amplifies institutional bias.
+- **Tasks:** Generate summaries with citations, stance-classify retrieved docs
+  (pro-consensus / dissenting / neutral), evaluate faithfulness (LLM-as-judge /
+  RAGAS), compare standard vs. perspective-balanced prompting, report citation
+  rate by privilege/region.
+- **In:** Phase 8/9 results, `queries.json`.
+- **Out:** `synthesis_eval_report.json`, `ragas_scores.csv`, figures.
+
+### Phase 11 - Interactive fairness dashboard
+- **Goal:** Expose retrieval and fairness metrics interactively.
+- **Tasks:** Build a Streamlit app to issue queries, show retrieved docs with
+  institution/geo metadata, and visualize SPD / SRR / diversity live.
+- **In:** retrieval pipeline + result artifacts.
+- **Out:** dashboard app + screenshots.
