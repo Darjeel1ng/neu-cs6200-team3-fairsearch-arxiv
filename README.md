@@ -1,7 +1,6 @@
 # neu-cs6200-team3-fairsearch-arxiv
 
-Working notes for the FairSearch-arXiv project. Phases 1-5 (data pipeline) are
-done and their outputs are committed here. Everything below is a quick reference, not a formal report.
+Working notes for the FairSearch-arXiv project. **Phases 10 and 11 are still working on**, Everything below is a quick reference, not a formal report.
 
 ---
 
@@ -35,11 +34,19 @@ pointer stubs instead of real data.
 | `openalex_gate_cache.json` | 66 MB | Cache of all OpenAlex DOI lookups from Phase 1. This is the expensive artifact (~2.5h of API calls); keep it so Phase 1 never has to hit the API again. |
 
 ### Committed - small reports / stats / figures (plain git)
-- `raw_data_profile.json`, `corpus_selection_report.json`, `openalex_gate_report.json` (Phase 1)
-- `text_cleaning_report.json` (Phase 2)
-- `affiliation_match_report.json`, `institution_alias_map.csv`, `label_distribution.csv` (Phase 3)
-- `final_corpus_statistics.csv`, `fairness_baseline_priors.json`, `corpus_summary.md`, `figures/*.png` (Phase 4)
-- `chroma_db/`, `chroma_ingestion_report.json`, `sample_retrieval_results.md`, `index_config.yaml` (phase 5)
+- Phase 1: `raw_data_profile.json`, `corpus_selection_report.json`, `openalex_gate_report.json`
+- Phase 2: `text_cleaning_report.json`
+- Phase 3: `affiliation_match_report.json`, `institution_alias_map.csv`, `label_distribution.csv`
+- Phase 4: `final_corpus_statistics.csv`, `fairness_baseline_priors.json`, `corpus_summary.md`, `figures/*.png`
+- Phase 5: `chroma_db/`, `chroma_ingestion_report.json`, `sample_retrieval_results.md`, `index_config.yaml`
+
+Update2_output folder:
+- Phase 6: `phase6_sample_retrieval.json`, `phase6_retrieval_pipeline_config.json`
+- Phase 7: `queries.json`, `query_benchmark_report.json`
+- Phase 8: `naive_retrieval_results.json`, `retrieval_parity_report.json` and figures
+- Phase 9: `mmr_reranked_results.json`, `lambda_ablation.csv` and figures
+- Phase 10:
+- Phase 11:  
 
 These let you sanity-check each phase without opening the parquet files.
 
@@ -57,16 +64,14 @@ These let you sanity-check each phase without opening the parquet files.
 ## How to re-run things
 
 The notebook caches aggressively, so re-running is cheap:
-
+- **( SUGGEST DO NOT RE-RUN THIS PHASE 1 )Re-run Phase 1:** you need to download the Kaggle snapshot (the notebook does this via `kagglehub`) and rebuild the candidate pool. With `openalex_gate_cache.json` present, the OpenAlex gate is served from cache, so the slow part is skipped.
 - **Re-run Phase 2->4 from scratch:** keep `final_50k_with_institution.parquet`,
   run the Phase 2, 3, 4 cells in order. No network needed (Phase 3 uses the
   OpenAlex institution already carried in the Phase 1 output; it only
   canonicalizes against the local QS Top-50 list).
-- **Re-run phase 5 from scratch** `final_50k_labeled.parquet` is the only file needed in this phase, just run the cell one by one in order.
-- **Re-run Phase 1:** you need to download the Kaggle snapshot (the notebook does
-  this via `kagglehub`) and rebuild the candidate pool. With
-  `openalex_gate_cache.json` present, the OpenAlex gate is served from cache, so
-  the slow part is skipped.
+- **Re-run phase 5 from scratch** `final_50k_labeled.parquet` is the only file needed in this phase, just run the cell one by one in order.(This is the phase building chroma_db)
+- **Re-run phase 6-10 from scratch** `final_50k_labeled.parquet` is the only file needed in phase 6, for all the cells in phase 6 and the other phase 7 - 10 just run the cell one by one in order.
+
 
 Note: Phase 1 reads an `openalex api.txt` config (mailto / polite-pool email)
 from the project parent folder. It's gitignored - set up your own.
@@ -130,7 +135,7 @@ real institution to (so the fairness labels in Phase 3 are meaningful).
 - Result: `chroma_db/`, `chroma_ingestion_report.json`, `sample_retrieval_results.md`, `index_config.yaml`.
 ---
 
-## Key results (the 50K corpus)
+## Phase 1-5: Key results (the 50K corpus)
 
 - 50,000 documents, 5,937 distinct institutions, 137 countries, years 2024-2026.
 
@@ -156,7 +161,7 @@ real institution to (so the fairness labels in Phase 3 are meaningful).
 
 ---
 
-## Roadmap (Phase 6+)
+## Update 2: Roadmap (Phase 6-11)
 
 Phases 1-5 build the labeled corpus, fairness priors, and ChromaDB index. The
 phases below cover the RAG-fairness pipeline described in the two project reports
@@ -170,6 +175,7 @@ goal, expected inputs, and expected outputs.
   with over-fetch headroom (e.g. fetch 20, re-rank to 10).
 - **In:** `chroma_db/`, `index_config.yaml`.
 - **Out:** retrieval pipeline config + sample retrieval output.
+- **Out:** retrieval pipeline config `phase6_sample_retrieval.json` + sample retrieval output `phase6_retrieval_pipeline_config.json`.
 
 ### Phase 7 - Bias-audit query benchmark
 - **Goal:** Build the 150-query evaluation set.
@@ -177,6 +183,7 @@ goal, expected inputs, and expected outputs.
   abstracts, curate 50 contradictory/debate queries, verify query privilege
   share vs. corpus baseline.
 - **In:** `final_50k_labeled.parquet`, retrieval pipeline.
+- **In:** `final_50k_labeled.parquet`, `phase6_retrieval_pipeline_config.json`.
 - **Out:** `queries.json`, `query_benchmark_report.json`.
 
 ### Phase 8 - Experiment A: retrieval parity audit (RQ1)
@@ -194,6 +201,7 @@ goal, expected inputs, and expected outputs.
   fairness), sweep lambda configs, re-rank top-20 to top-10, measure nDCG@10 /
   P@10 / MRR plus unique institutions/countries and SPD/SRR.
 - **In:** Phase 8 retrieval results, `fairness_baseline_priors.json`.
+- **In:** Phase 8 retrieval results `naive_retrieval_results.json`, `fairness_baseline_priors.json`.
 - **Out:** `mmr_reranked_results.json`, `lambda_ablation.csv`, tradeoff figures.
 
 ### Phase 10 - Experiment B: generative faithfulness + synthesis bias (RQ2)
@@ -212,3 +220,55 @@ goal, expected inputs, and expected outputs.
   institution/geo metadata, and visualize SPD / SRR / diversity live.
 - **In:** retrieval pipeline + result artifacts.
 - **Out:** dashboard app + screenshots.
+
+---
+
+## Update 2: Results (Phase 6-11), based on 150-query evaluation set:
+
+**Fairness labels (`privilege_label`)**
+- **Baseline**
+  - privileged: **17.1%** (8,553 papers)
+  - underrepresented: **82.9%** (41,447 papers)
+  - unknown: 0%
+  - privileged : underrepresented ≈ 0.21
+- **Observed**
+  - privileged: **16.5%** (8,150 papers)
+  - underrepresented: **83.5%** (41,750 papers)
+  - unknown: 0%
+  - privileged : underrepresented ≈ 0.198
+
+**Baseline: Region distribution**
+- Europe 43.1% | North America 27.0% | Asia 25.3% | Oceania 2.3% |
+  South America 1.5% | Africa 0.5% | Unknown 0.3%
+
+**Observed: Region distribution**
+- **Europe 46.2%** | North America 26.3% | **Asia 22.3%** | Oceania 2.8% |
+  South America 1.3% | Africa 0.5% | Unknown 0.5%
+
+**SPD:**
+- Privilege
+  - Underrepresented: 0.00606,
+  - Privileged": -0.00606,
+- Region
+  - Europe: 0.031773, ( 0.03 indicates mild overrepresentation relative to the corpus)
+  - North America: -0.006807,
+  - Asia: -0.02966, ( -0.03 indicates mild underrepresentation relative to the corpus)
+  - Oceania: 0.00494,
+  - South America: -0.001567,
+  - Africa: -0.0024,
+  - Unknown: 0.00156
+
+**SRR:**
+- Privilege
+  - Underrepresented: 1.007311,
+  - Privileged": 0.964574,
+- Region
+  - Europe: 1.073795, ( 1.07 > 1 indicates mild overrepresentation relative to the corpus)
+  - North America: 0.974802,
+  - Asia: 0.882609, ( 0.88 < 1 indicates mild underrepresentation relative to the corpus)
+  - Oceania: 1.214224, ( 1.2 > 1 indicates mild overrepresentation relative to the corpus)
+  - South America: 0.894832,
+  - Africa: 0.954198,
+  - Unknown: 1.453488
+
+(See `data/update2_output` folders for all the outputs and figures.)

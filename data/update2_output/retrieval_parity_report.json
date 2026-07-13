@@ -1,0 +1,507 @@
+{
+  "queries": 150,
+  "retrieved_documents": 3000,
+  "baseline_privilege": {
+    "underrepresented": 0.82894,
+    "privileged": 0.17106
+  },
+  "observed_privilege": {
+    "underrepresented": 0.835,
+    "privileged": 0.165
+  },
+  "baseline_region": {
+    "Europe": 0.43056,
+    "North America": 0.27014,
+    "Asia": 0.25266,
+    "Oceania": 0.02306,
+    "South America": 0.0149,
+    "Africa": 0.00524,
+    "Unknown": 0.00344
+  },
+  "observed_region": {
+    "Europe": 0.462333,
+    "North America": 0.263333,
+    "Asia": 0.223,
+    "Oceania": 0.028,
+    "South America": 0.013333,
+    "Unknown": 0.005,
+    "Africa": 0.005
+  },
+  "spd_privilege": {
+    "underrepresented": 0.00606,
+    "privileged": -0.00606
+  },
+  "spd_region": {
+    "Europe": 0.031773,
+    "North America": -0.006807,
+    "Asia": -0.02966,
+    "Oceania": 0.00494,
+    "South America": -0.001567,
+    "Africa": -0.00024,
+    "Unknown": 0.00156
+  },
+  "srr_privilege": {
+    "underrepresented": 1.007311,
+    "privileged": 0.964574
+  },
+  "srr_region": {
+    "Europe": 1.073795,
+    "North America": 0.974802,
+    "Asia": 0.882609,
+    "Oceania": 1.214224,
+    "South America": 0.894832,
+    "Africa": 0.954198,
+    "Unknown": 1.453488
+  },
+  "category_breakdown": {
+    "cs.AI": {
+      "n_retrieved": 100,
+      "observed_distribution": {
+        "underrepresented": 0.83,
+        "privileged": 0.17
+      },
+      "spd": {
+        "underrepresented": 0.00106,
+        "privileged": -0.00106
+      },
+      "srr": {
+        "underrepresented": 1.001279,
+        "privileged": 0.993803
+      }
+    },
+    "cs.AR": {
+      "n_retrieved": 20,
+      "observed_distribution": {
+        "underrepresented": 0.75,
+        "privileged": 0.25
+      },
+      "spd": {
+        "underrepresented": -0.07894,
+        "privileged": 0.07894
+      },
+      "srr": {
+        "underrepresented": 0.90477,
+        "privileged": 1.461476
+      }
+    },
+    "cs.CE": {
+      "n_retrieved": 20,
+      "observed_distribution": {
+        "underrepresented": 0.8,
+        "privileged": 0.2
+      },
+      "spd": {
+        "underrepresented": -0.02894,
+        "privileged": 0.02894
+      },
+      "srr": {
+        "underrepresented": 0.965088,
+        "privileged": 1.16918
+      }
+    },
+    "cs.CL": {
+      "n_retrieved": 80,
+      "observed_distribution": {
+        "underrepresented": 0.8125,
+        "privileged": 0.1875
+      },
+      "spd": {
+        "underrepresented": -0.01644,
+        "privileged": 0.01644
+      },
+      "srr": {
+        "underrepresented": 0.980167,
+        "privileged": 1.096107
+      }
+    },
+    "cs.CR": {
+      "n_retrieved": 80,
+      "observed_distribution": {
+        "underrepresented": 0.875,
+        "privileged": 0.125
+      },
+      "spd": {
+        "underrepresented": 0.04606,
+        "privileged": -0.04606
+      },
+      "srr": {
+        "underrepresented": 1.055565,
+        "privileged": 0.730738
+      }
+    },
+    "cs.CV": {
+      "n_retrieved": 220,
+      "observed_distribution": {
+        "underrepresented": 0.859091,
+        "privileged": 0.140909
+      },
+      "spd": {
+        "underrepresented": 0.030151,
+        "privileged": -0.030151
+      },
+      "srr": {
+        "underrepresented": 1.036373,
+        "privileged": 0.82374
+      }
+    },
+    "cs.CY": {
+      "n_retrieved": 40,
+      "observed_distribution": {
+        "underrepresented": 0.825,
+        "privileged": 0.175
+      },
+      "spd": {
+        "underrepresented": -0.00394,
+        "privileged": 0.00394
+      },
+      "srr": {
+        "underrepresented": 0.995247,
+        "privileged": 1.023033
+      }
+    },
+    "cs.DB": {
+      "n_retrieved": 20,
+      "observed_distribution": {
+        "underrepresented": 0.8,
+        "privileged": 0.2
+      },
+      "spd": {
+        "underrepresented": -0.02894,
+        "privileged": 0.02894
+      },
+      "srr": {
+        "underrepresented": 0.965088,
+        "privileged": 1.16918
+      }
+    },
+    "cs.DC": {
+      "n_retrieved": 40,
+      "observed_distribution": {
+        "underrepresented": 0.825,
+        "privileged": 0.175
+      },
+      "spd": {
+        "underrepresented": -0.00394,
+        "privileged": 0.00394
+      },
+      "srr": {
+        "underrepresented": 0.995247,
+        "privileged": 1.023033
+      }
+    },
+    "cs.DM": {
+      "n_retrieved": 20,
+      "observed_distribution": {
+        "underrepresented": 1.0
+      },
+      "spd": {
+        "underrepresented": 0.17106,
+        "privileged": -0.17106
+      },
+      "srr": {
+        "underrepresented": 1.20636,
+        "privileged": 0.0
+      }
+    },
+    "cs.DS": {
+      "n_retrieved": 20,
+      "observed_distribution": {
+        "underrepresented": 0.9,
+        "privileged": 0.1
+      },
+      "spd": {
+        "underrepresented": 0.07106,
+        "privileged": -0.07106
+      },
+      "srr": {
+        "underrepresented": 1.085724,
+        "privileged": 0.58459
+      }
+    },
+    "cs.ET": {
+      "n_retrieved": 20,
+      "observed_distribution": {
+        "underrepresented": 0.95,
+        "privileged": 0.05
+      },
+      "spd": {
+        "underrepresented": 0.12106,
+        "privileged": -0.12106
+      },
+      "srr": {
+        "underrepresented": 1.146042,
+        "privileged": 0.292295
+      }
+    },
+    "cs.GR": {
+      "n_retrieved": 20,
+      "observed_distribution": {
+        "underrepresented": 0.8,
+        "privileged": 0.2
+      },
+      "spd": {
+        "underrepresented": -0.02894,
+        "privileged": 0.02894
+      },
+      "srr": {
+        "underrepresented": 0.965088,
+        "privileged": 1.16918
+      }
+    },
+    "cs.GT": {
+      "n_retrieved": 20,
+      "observed_distribution": {
+        "underrepresented": 0.6,
+        "privileged": 0.4
+      },
+      "spd": {
+        "underrepresented": -0.22894,
+        "privileged": 0.22894
+      },
+      "srr": {
+        "underrepresented": 0.723816,
+        "privileged": 2.338361
+      }
+    },
+    "cs.HC": {
+      "n_retrieved": 100,
+      "observed_distribution": {
+        "underrepresented": 0.81,
+        "privileged": 0.19
+      },
+      "spd": {
+        "underrepresented": -0.01894,
+        "privileged": 0.01894
+      },
+      "srr": {
+        "underrepresented": 0.977152,
+        "privileged": 1.110721
+      }
+    },
+    "cs.IR": {
+      "n_retrieved": 40,
+      "observed_distribution": {
+        "underrepresented": 0.875,
+        "privileged": 0.125
+      },
+      "spd": {
+        "underrepresented": 0.04606,
+        "privileged": -0.04606
+      },
+      "srr": {
+        "underrepresented": 1.055565,
+        "privileged": 0.730738
+      }
+    },
+    "cs.IT": {
+      "n_retrieved": 60,
+      "observed_distribution": {
+        "underrepresented": 0.766667,
+        "privileged": 0.233333
+      },
+      "spd": {
+        "underrepresented": -0.062273,
+        "privileged": 0.062273
+      },
+      "srr": {
+        "underrepresented": 0.924876,
+        "privileged": 1.364042
+      }
+    },
+    "cs.LG": {
+      "n_retrieved": 280,
+      "observed_distribution": {
+        "underrepresented": 0.821429,
+        "privileged": 0.178571
+      },
+      "spd": {
+        "underrepresented": -0.007511,
+        "privileged": 0.007511
+      },
+      "srr": {
+        "underrepresented": 0.990939,
+        "privileged": 1.043909
+      }
+    },
+    "cs.LO": {
+      "n_retrieved": 20,
+      "observed_distribution": {
+        "underrepresented": 0.9,
+        "privileged": 0.1
+      },
+      "spd": {
+        "underrepresented": 0.07106,
+        "privileged": -0.07106
+      },
+      "srr": {
+        "underrepresented": 1.085724,
+        "privileged": 0.58459
+      }
+    },
+    "cs.MA": {
+      "n_retrieved": 20,
+      "observed_distribution": {
+        "underrepresented": 0.55,
+        "privileged": 0.45
+      },
+      "spd": {
+        "underrepresented": -0.27894,
+        "privileged": 0.27894
+      },
+      "srr": {
+        "underrepresented": 0.663498,
+        "privileged": 2.630656
+      }
+    },
+    "cs.NA": {
+      "n_retrieved": 320,
+      "observed_distribution": {
+        "underrepresented": 0.853125,
+        "privileged": 0.146875
+      },
+      "spd": {
+        "underrepresented": 0.024185,
+        "privileged": -0.024185
+      },
+      "srr": {
+        "underrepresented": 1.029176,
+        "privileged": 0.858617
+      }
+    },
+    "cs.NE": {
+      "n_retrieved": 20,
+      "observed_distribution": {
+        "underrepresented": 0.85,
+        "privileged": 0.15
+      },
+      "spd": {
+        "underrepresented": 0.02106,
+        "privileged": -0.02106
+      },
+      "srr": {
+        "underrepresented": 1.025406,
+        "privileged": 0.876885
+      }
+    },
+    "cs.NI": {
+      "n_retrieved": 40,
+      "observed_distribution": {
+        "underrepresented": 0.925,
+        "privileged": 0.075
+      },
+      "spd": {
+        "underrepresented": 0.09606,
+        "privileged": -0.09606
+      },
+      "srr": {
+        "underrepresented": 1.115883,
+        "privileged": 0.438443
+      }
+    },
+    "cs.PL": {
+      "n_retrieved": 20,
+      "observed_distribution": {
+        "underrepresented": 0.75,
+        "privileged": 0.25
+      },
+      "spd": {
+        "underrepresented": -0.07894,
+        "privileged": 0.07894
+      },
+      "srr": {
+        "underrepresented": 0.90477,
+        "privileged": 1.461476
+      }
+    },
+    "cs.RO": {
+      "n_retrieved": 120,
+      "observed_distribution": {
+        "underrepresented": 0.8,
+        "privileged": 0.2
+      },
+      "spd": {
+        "underrepresented": -0.02894,
+        "privileged": 0.02894
+      },
+      "srr": {
+        "underrepresented": 0.965088,
+        "privileged": 1.16918
+      }
+    },
+    "cs.SD": {
+      "n_retrieved": 20,
+      "observed_distribution": {
+        "underrepresented": 0.95,
+        "privileged": 0.05
+      },
+      "spd": {
+        "underrepresented": 0.12106,
+        "privileged": -0.12106
+      },
+      "srr": {
+        "underrepresented": 1.146042,
+        "privileged": 0.292295
+      }
+    },
+    "cs.SE": {
+      "n_retrieved": 40,
+      "observed_distribution": {
+        "underrepresented": 0.875,
+        "privileged": 0.125
+      },
+      "spd": {
+        "underrepresented": 0.04606,
+        "privileged": -0.04606
+      },
+      "srr": {
+        "underrepresented": 1.055565,
+        "privileged": 0.730738
+      }
+    },
+    "cs.SI": {
+      "n_retrieved": 20,
+      "observed_distribution": {
+        "underrepresented": 0.95,
+        "privileged": 0.05
+      },
+      "spd": {
+        "underrepresented": 0.12106,
+        "privileged": -0.12106
+      },
+      "srr": {
+        "underrepresented": 1.146042,
+        "privileged": 0.292295
+      }
+    },
+    "cs.SY": {
+      "n_retrieved": 160,
+      "observed_distribution": {
+        "underrepresented": 0.73125,
+        "privileged": 0.26875
+      },
+      "spd": {
+        "underrepresented": -0.09769,
+        "privileged": 0.09769
+      },
+      "srr": {
+        "underrepresented": 0.882151,
+        "privileged": 1.571086
+      }
+    },
+    "mixed": {
+      "n_retrieved": 1000,
+      "observed_distribution": {
+        "underrepresented": 0.851,
+        "privileged": 0.149
+      },
+      "spd": {
+        "underrepresented": 0.02206,
+        "privileged": -0.02206
+      },
+      "srr": {
+        "underrepresented": 1.026612,
+        "privileged": 0.871039
+      }
+    }
+  }
+}

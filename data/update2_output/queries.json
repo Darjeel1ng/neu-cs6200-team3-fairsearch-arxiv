@@ -1,0 +1,1302 @@
+[
+  {
+    "query_id": 1,
+    "query_type": "neutral",
+    "query": "prove analog perron frobenius theorem multilinear forms nonnegative coefficients generally polynomial maps determine geometric convergence rate power algorithm unique normalized",
+    "query_paper_cleaned_title": "perron-frobenius theorem for nonnegative multilinear forms and extensions",
+    "primary_category": "cs.NA",
+    "document_id": "0905.1626",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 2,
+    "query_type": "neutral",
+    "query": "heterogeneous anisotropic diffusion problems arise various areas science engineering including plasma physics petroleum image processing standard numerical methods produce spurious",
+    "query_paper_cleaned_title": "an anisotropic mesh adaptation method for the finite element solution of heterogeneous anisotropic diffusion problems",
+    "primary_category": "cs.NA",
+    "document_id": "1003.4530",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 3,
+    "query_type": "neutral",
+    "query": "applications linear algebra including nuclear physics structural dynamics need deal uncertainty matrices focus depend set parameters omega interested minimal eigenvalue",
+    "query_paper_cleaned_title": "calculating the minimal/maximal eigenvalue of symmetric parametrized matrices using projection",
+    "primary_category": "cs.NA",
+    "document_id": "1904.09923",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 4,
+    "query_type": "neutral",
+    "query": "vortex element methods used efficiently simulate incompressible flows using lagrangian techniques use fmm fast multipole method allows considerable speed velocity",
+    "query_paper_cleaned_title": "efficient fmm accelerated vortex methods in three dimensions via the lamb-helmholtz decomposition",
+    "primary_category": "cs.NA",
+    "document_id": "1201.5430",
+    "privilege_label": "privileged"
+  },
+  {
+    "query_id": 5,
+    "query_type": "neutral",
+    "query": "effect preconditioning linear weighted squares using approximation model matrix analyzed showing interplay eigenstructures weighting matrices small example given illustrating resulting",
+    "query_paper_cleaned_title": "a note on preconditioning weighted linear least squares, with consequences for weakly-constrained variational data assimilation",
+    "primary_category": "cs.NA",
+    "document_id": "1709.09031",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 6,
+    "query_type": "neutral",
+    "query": "numerical calculations d steady incompressible driven cavity flow presented navier stokes equations streamfunction vorticity formulation solved numerically using fine uniform",
+    "query_paper_cleaned_title": "numerical solutions of 2-d steady incompressible driven cavity flow at high reynolds numbers",
+    "primary_category": "cs.NA",
+    "document_id": "cs/0411047",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 7,
+    "query_type": "neutral",
+    "query": "viscoelastic phase flows arise various industrial natural processes developing accurate efficient software detailed numerical simulation highly relevant challenging research task",
+    "query_paper_cleaned_title": "an unstructured geometrical un-split vof method for viscoelastic two-phase flows",
+    "primary_category": "cs.NA",
+    "document_id": "2311.10872",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 8,
+    "query_type": "neutral",
+    "query": "study multi parameter tikhonov regularization e multiple penalties models useful sought solution exhibits distinct features simultaneously choice rules discrepancy principle",
+    "query_paper_cleaned_title": "multi-parameter tikhonov regularization",
+    "primary_category": "cs.NA",
+    "document_id": "1102.1173",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 9,
+    "query_type": "neutral",
+    "query": "consider nonlocal functional equation generalization mathematical model used behavioral sciences built operator introduces convex combination nonlinear mixing function arguments provided",
+    "query_paper_cleaned_title": "collocation method for a functional equation arising in behavioral sciences",
+    "primary_category": "cs.NA",
+    "document_id": "2411.01862",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 10,
+    "query_type": "neutral",
+    "query": "article considers unilateral contact problem wave equation reduced variational inequality dirichlet neumann operator boundary solved saddle point formulation using elements",
+    "query_paper_cleaned_title": "time domain boundary elements for dynamic contact problems",
+    "primary_category": "cs.NA",
+    "document_id": "1801.09792",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 11,
+    "query_type": "neutral",
+    "query": "present work attempts integrate independent efforts fast n body community create fastest library core heterogenous architectures focus placed low accuracy",
+    "query_paper_cleaned_title": "an fmm based on dual tree traversal for many-core architectures",
+    "primary_category": "cs.NA",
+    "document_id": "1209.3516",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 12,
+    "query_type": "neutral",
+    "query": "work propose upscaling method nonlinear forchheimer flow highly heterogeneous porous media generalized law considered incompressible slightly compressible single phase flows",
+    "query_paper_cleaned_title": "upscaling of nonlinear forchheimer flows",
+    "primary_category": "cs.NA",
+    "document_id": "1303.4789",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 13,
+    "query_type": "neutral",
+    "query": "work considers charged systems described modified poisson nernst planck pnp equations incorporate ionic steric effects born solvation energy dielectric inhomogeneity",
+    "query_paper_cleaned_title": "local structure-preserving relaxation method for charged systems on unstructured meshes",
+    "primary_category": "cs.NA",
+    "document_id": "2310.05411",
+    "privilege_label": "privileged"
+  },
+  {
+    "query_id": 14,
+    "query_type": "neutral",
+    "query": "work discuss compare methods numerical approximation constant variable coefficient diffusion equations single composite domains possible discontinuity solution flux interfaces considering",
+    "query_paper_cleaned_title": "high-order numerical methods for 2d parabolic problems in single and composite domains",
+    "primary_category": "cs.NA",
+    "document_id": "1707.08459",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 15,
+    "query_type": "neutral",
+    "query": "qmc rules equal weight quadrature approximating integrals s line research studies integration error functions unit ball called korobov spaces hilbert",
+    "query_paper_cleaned_title": "numerical integration in $\\log$-korobov and $\\log$-cosine spaces",
+    "primary_category": "cs.NA",
+    "document_id": "1411.2715",
+    "privilege_label": "privileged"
+  },
+  {
+    "query_id": 16,
+    "query_type": "neutral",
+    "query": "tensor based methods receiving growing scientific computing numerical solution problems defined high dimensional product spaces family called proper generalized decompositions",
+    "query_paper_cleaned_title": "proper generalized decomposition for nonlinear convex problems in tensor banach spaces",
+    "primary_category": "cs.NA",
+    "document_id": "1106.4424",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 17,
+    "query_type": "neutral",
+    "query": "method machine learning serving discrete field theories physics developed algorithm trains theory set observational data spacetime lattice uses learned predict",
+    "query_paper_cleaned_title": "machine learning and serving of discrete field theories -- when artificial intelligence meets the discrete universe",
+    "primary_category": "cs.LG",
+    "document_id": "1910.10147",
+    "privilege_label": "privileged"
+  },
+  {
+    "query_id": 18,
+    "query_type": "neutral",
+    "query": "use machine learning methods high energy physics typically relies large volumes precise simulation training models complex increasingly sensitive differences real",
+    "query_paper_cleaned_title": "mack: mismodeling addressed with contrastive knowledge",
+    "primary_category": "cs.LG",
+    "document_id": "2410.13947",
+    "privilege_label": "privileged"
+  },
+  {
+    "query_id": 19,
+    "query_type": "neutral",
+    "query": "quality control printed circuit boards pcbs paramount advancing electronic device technology numerous machine learning methodologies utilized augment defect detection efficiency",
+    "query_paper_cleaned_title": "enhancing printed circuit board defect detection through ensemble learning",
+    "primary_category": "cs.LG",
+    "document_id": "2409.09555",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 20,
+    "query_type": "neutral",
+    "query": "algebraic multigrid amg methods efficient solvers linear systems equations widely used solution problems stemming discretization partial differential pdes severe limitation",
+    "query_paper_cleaned_title": "a deep learning algorithm to accelerate algebraic multigrid methods in finite element solvers of 3d elliptic pdes",
+    "primary_category": "cs.LG",
+    "document_id": "2304.10832",
+    "privilege_label": "privileged"
+  },
+  {
+    "query_id": 21,
+    "query_type": "neutral",
+    "query": "machine learning methods gradually adopted wide variety social economic scientific contexts notorious struggling exact mathematics typical example computer algebra includes",
+    "query_paper_cleaned_title": "symbolic equation solving via reinforcement learning",
+    "primary_category": "cs.LG",
+    "document_id": "2401.13447",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 22,
+    "query_type": "neutral",
+    "query": "study develops lagged backward compatible physics informed neural network lbc pinn simulating inverting dimensional unsaturated soil consolidation long term loading",
+    "query_paper_cleaned_title": "lagged backward-compatible physics-informed neural networks for unsaturated soil consolidation analysis",
+    "primary_category": "cs.LG",
+    "document_id": "2602.07031",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 23,
+    "query_type": "neutral",
+    "query": "machine learning enables unbinned highly differential cross section measurements recent idea uses generative models morph starting simulation unfolded data extend",
+    "query_paper_cleaned_title": "generative unfolding with distribution mapping",
+    "primary_category": "cs.LG",
+    "document_id": "2411.02495",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 24,
+    "query_type": "neutral",
+    "query": "personalization aims characterize individual preferences widely applied fields conventional personalized methods operate centralized manner potentially exposing raw data pooling information",
+    "query_paper_cleaned_title": "ppfl: a personalized federated learning framework for heterogeneous population",
+    "primary_category": "cs.LG",
+    "document_id": "2310.14337",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 25,
+    "query_type": "neutral",
+    "query": "past decade wind energy gained attention world owing indirectness volatility properties power penetration increased difficulty complexity dispatching planning electric systems",
+    "query_paper_cleaned_title": "performance comparison of different machine learning algorithms on the prediction of wind turbine power generation",
+    "primary_category": "cs.LG",
+    "document_id": "2105.05197",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 26,
+    "query_type": "neutral",
+    "query": "article reviews modern optimization methods training neural networks emphasis efficiency scale present state art algorithms unified algorithmic template highlights importance",
+    "query_paper_cleaned_title": "training neural networks at any scale",
+    "primary_category": "cs.LG",
+    "document_id": "2511.11163",
+    "privilege_label": "privileged"
+  },
+  {
+    "query_id": 27,
+    "query_type": "neutral",
+    "query": "clinical biomedical research low resource settings faces significant challenges need high quality data sufficient sample sizes construct effective models constraints",
+    "query_paper_cleaned_title": "bridging data gaps in healthcare: a scoping review of transfer learning in biomedical data analysis",
+    "primary_category": "cs.LG",
+    "document_id": "2407.11034",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 28,
+    "query_type": "neutral",
+    "query": "machine learning ml integral cyber physical systems cps growing shifting training traditional cloud based device processing tinyml example privacy latency",
+    "query_paper_cleaned_title": "rocknet: distributed learning on ultra-low-power devices",
+    "primary_category": "cs.LG",
+    "document_id": "2510.13320",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 29,
+    "query_type": "neutral",
+    "query": "financial recommendation systems fail account key behavioral regulatory factors leading advice misaligned user preferences difficult interpret unlikely followed present flarko",
+    "query_paper_cleaned_title": "aligning language models with investor and market behavior for financial recommendations",
+    "primary_category": "cs.LG",
+    "document_id": "2510.15993",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 30,
+    "query_type": "neutral",
+    "query": "cardiovascular hemodynamic fields provide valuable medical decision markers coronary artery disease computational fluid dynamics cfd gold standard accurate non invasive",
+    "query_paper_cleaned_title": "deep vectorised operators for pulsatile hemodynamics estimation in coronary arteries from a steady-state prior",
+    "primary_category": "cs.LG",
+    "document_id": "2410.11920",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 31,
+    "query_type": "neutral",
+    "query": "domain generalization dg aims solving distribution shift problems various scenes existing approaches based convolution neural networks cnns vision transformers vits",
+    "query_paper_cleaned_title": "dgmamba: domain generalization via generalized state space model",
+    "primary_category": "cs.CV",
+    "document_id": "2404.07794",
+    "privilege_label": "privileged"
+  },
+  {
+    "query_id": 32,
+    "query_type": "neutral",
+    "query": "present innovative headed attention layer combines geometric latent features segment d scene semantically meaningful subsets head local global information using",
+    "query_paper_cleaned_title": "two heads are better than one: geometric-latent attention for point cloud classification and segmentation",
+    "primary_category": "cs.CV",
+    "document_id": "2111.00231",
+    "privilege_label": "privileged"
+  },
+  {
+    "query_id": 33,
+    "query_type": "neutral",
+    "query": "facing escalating threat global wildfires numerous computer vision techniques using remote sensing data applied area selection deep learning methods wildfire",
+    "query_paper_cleaned_title": "comparative and interpretative analysis of cnn and transformer models in predicting wildfire spread using remote sensing data",
+    "primary_category": "cs.CV",
+    "document_id": "2503.14150",
+    "privilege_label": "privileged"
+  },
+  {
+    "query_id": 34,
+    "query_type": "neutral",
+    "query": "large language models llms opened new possibilities intelligent agents endowing human like thinking cognitive abilities work delve potential autonomous driving",
+    "query_paper_cleaned_title": "drivemlm: aligning multi-modal large language models with behavioral planning states for autonomous driving",
+    "primary_category": "cs.CV",
+    "document_id": "2312.09245",
+    "privilege_label": "privileged"
+  },
+  {
+    "query_id": 35,
+    "query_type": "neutral",
+    "query": "study aims advance surgical phase recognition arthroscopic procedures specifically anterior cruciate ligament acl reconstruction introducing arthroscopy dataset developing novel transformer",
+    "query_paper_cleaned_title": "arthrophase: a novel dataset and method for phase recognition in arthroscopic video",
+    "primary_category": "cs.CV",
+    "document_id": "2502.07431",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 36,
+    "query_type": "neutral",
+    "query": "prevalence ocular illnesses growing globally presenting substantial public health challenge early detection timely intervention crucial averting visual impairment enhancing patient",
+    "query_paper_cleaned_title": "adaptive class learning to screen diabetic disorders in fundus images of eye",
+    "primary_category": "cs.CV",
+    "document_id": "2501.12048",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 37,
+    "query_type": "neutral",
+    "query": "deep understanding technical documents dutd attractive field great potential large amounts accumulated valuable knowledge contained addition holistic depends accurate analysis",
+    "query_paper_cleaned_title": "kyrtos: a methodology for automatic deep analysis of graphic charts with curves in technical documents",
+    "primary_category": "cs.CV",
+    "document_id": "2602.09337",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 38,
+    "query_type": "neutral",
+    "query": "visual affordance segmentation identifies surfaces object agent interact common challenges identification affordances variety geometry physical properties occlusions paper focus hand",
+    "query_paper_cleaned_title": "affordance segmentation of hand-occluded containers from exocentric images",
+    "primary_category": "cs.CV",
+    "document_id": "2308.11233",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 39,
+    "query_type": "neutral",
+    "query": "recent years neural networks used solve phase retrieval problems imaging superior accuracy speed traditional techniques especially presence noise context interferometric",
+    "query_paper_cleaned_title": "3d-2d neural nets for phase retrieval in noisy interferometric imaging",
+    "primary_category": "cs.CV",
+    "document_id": "2402.06063",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 40,
+    "query_type": "neutral",
+    "query": "multi object tracking mot critical task computer vision applications ranging surveillance systems autonomous driving threats algorithms widely studied particular incorrect",
+    "query_paper_cleaned_title": "physical id-transfer attacks against multi-object tracking via adversarial trajectory",
+    "primary_category": "cs.CV",
+    "document_id": "2512.01934",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 41,
+    "query_type": "neutral",
+    "query": "traditional reconstruction based methods struggled achieve competitive performance anomaly detection paper introduce denoising diffusion ddad novel process image conditioned target",
+    "query_paper_cleaned_title": "anomaly detection with conditioned denoising diffusion models",
+    "primary_category": "cs.CV",
+    "document_id": "2305.15956",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 42,
+    "query_type": "neutral",
+    "query": "study examines concept axisymmetric actuator based magnetorheological membrane electromagnet permanent magnet construction enables application wide range practical devices like pumping",
+    "query_paper_cleaned_title": "magnetorheological axisymmetric actuator with permanent magnet",
+    "primary_category": "cs.SY",
+    "document_id": "2210.15968",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 43,
+    "query_type": "neutral",
+    "query": "paper repeat groundtrack orbit maintenance problem addressed spacecraft driven electric propulsion adaptive solution proposed combines hysteresis controller recursive squares filter",
+    "query_paper_cleaned_title": "an adaptive groundtrack maintenance scheme for spacecraft with electric propulsion",
+    "primary_category": "cs.SY",
+    "document_id": "1807.08109",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 44,
+    "query_type": "neutral",
+    "query": "paper employs fully adaptive semi frequency sweep algorithm using loewner matrix based state model electromagnetic simulation proposed algorithms use models",
+    "query_paper_cleaned_title": "fully-adaptive and semi-adaptive frequency sweep algorithm exploiting loewner-state model for em simulation of multiport systems",
+    "primary_category": "cs.SY",
+    "document_id": "2504.09942",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 45,
+    "query_type": "neutral",
+    "query": "consider problem globally minimizing sum rational functions given compact semialgebraic set number terms large degree term small variables provided kind",
+    "query_paper_cleaned_title": "minimizing the sum of many rational functions",
+    "primary_category": "cs.SY",
+    "document_id": "1102.4954",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 46,
+    "query_type": "neutral",
+    "query": "fluid models popular formalism quantitative modeling biochemical systems analytical performance main idea approximate large scale markov chain compact set ordinary",
+    "query_paper_cleaned_title": "over-approximation of fluid models",
+    "primary_category": "cs.SY",
+    "document_id": "1705.00530",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 47,
+    "query_type": "neutral",
+    "query": "outliers contaminate measurement process nonlinear systems caused sensor errors model uncertainties change ambient environment data loss malicious cyber attacks extended",
+    "query_paper_cleaned_title": "robust extended kalman filtering for systems with measurement outliers",
+    "primary_category": "cs.SY",
+    "document_id": "1904.00335",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 48,
+    "query_type": "neutral",
+    "query": "paper presents control synthesis algorithm dynamical systems satisfy specifications given fragment linear temporal logic based abstraction refinement scheme nonuniform partitions",
+    "query_paper_cleaned_title": "nonuniform abstractions, refinement and controller synthesis with novel bdd encodings",
+    "primary_category": "cs.SY",
+    "document_id": "1804.04280",
+    "privilege_label": "privileged"
+  },
+  {
+    "query_id": 49,
+    "query_type": "neutral",
+    "query": "paper investigates problem optimal frequency regulation multi machine power networks synchronous described sixth order model analyzing physical energy stored network",
+    "query_paper_cleaned_title": "optimal power dispatch in networks of high-dimensional models of synchronous machines",
+    "primary_category": "cs.SY",
+    "document_id": "1603.06688",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 50,
+    "query_type": "neutral",
+    "query": "cooperative autonomous robotic systems significant potential executing complex multi task missions space air ground maritime domains commonly operate remote dynamic",
+    "query_paper_cleaned_title": "onboard mission replanning for adaptive cooperative multi-robot systems",
+    "primary_category": "cs.RO",
+    "document_id": "2506.06094",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 51,
+    "query_type": "neutral",
+    "query": "integration generative artificial intelligence ai autonomous machines represents major paradigm shift systems operate unlocks new solutions problems deemed intractable agents",
+    "query_paper_cleaned_title": "generative ai agents in autonomous machines: a safety perspective",
+    "primary_category": "cs.RO",
+    "document_id": "2410.15489",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 52,
+    "query_type": "neutral",
+    "query": "paper address development robotic rehabilitation upper limbs based collaborative end effector solutions use commercial robots offers significant advantages task optimized",
+    "query_paper_cleaned_title": "optimizing design and control methods for using collaborative robots in upper-limb rehabilitation",
+    "primary_category": "cs.RO",
+    "document_id": "2407.18661",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 53,
+    "query_type": "neutral",
+    "query": "execution monitoring essential robots detect respond failures impossible enumerate given task learn successful executions visual anomalies runtime method learns predict",
+    "query_paper_cleaned_title": "using visual anomaly detection for task execution monitoring",
+    "primary_category": "cs.RO",
+    "document_id": "2107.14206",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 54,
+    "query_type": "neutral",
+    "query": "large number robotic platforms arms targeting surgical applications despite groups employed scientific exploration possible multi arm platform involve study mechanisms",
+    "query_paper_cleaned_title": "a multi-arm robotic platform for scientific exploration",
+    "primary_category": "cs.RO",
+    "document_id": "2210.11877",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 55,
+    "query_type": "neutral",
+    "query": "human robot collaboration hrc benefit robots abilities interpret emotional states current emotion recognition er models fall short particularly reliance acted",
+    "query_paper_cleaned_title": "\"i'm not mad, just focused'': understanding human emotions in human-robot collaboration",
+    "primary_category": "cs.RO",
+    "document_id": "2605.16816",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 56,
+    "query_type": "neutral",
+    "query": "evaluations d target selection using fitts law iso recommends effective width w e calculated univariate standard deviation coordinates related research",
+    "query_paper_cleaned_title": "normalizing speed-accuracy biases in 2d pointing tasks with better calculation of effective target widths",
+    "primary_category": "cs.HC",
+    "document_id": "2602.04432",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 57,
+    "query_type": "neutral",
+    "query": "educational technologies misalign instructors pedagogical goals forcing adaptations compromise teaching efficacy paper present case study development curriculum technology context university",
+    "query_paper_cleaned_title": "pull requests from the classroom: co-developing curriculum and code",
+    "primary_category": "cs.HC",
+    "document_id": "2508.00646",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 58,
+    "query_type": "neutral",
+    "query": "analyzing user behavior usability evaluation challenging time consuming task especially number participants scale complexity grows propose uxsense visual analytics using",
+    "query_paper_cleaned_title": "uxsense: supporting user experience analysis with visualization and computer vision",
+    "primary_category": "cs.HC",
+    "document_id": "2310.07300",
+    "privilege_label": "privileged"
+  },
+  {
+    "query_id": 59,
+    "query_type": "neutral",
+    "query": "expansive domain virtual reality vr deg videos immerse viewers spherical environment allowing explore interact world angles video representation offers unparalleled",
+    "query_paper_cleaned_title": "attention guidance through video script: a case study of object focusing on 360{\\deg} vr video tours",
+    "primary_category": "cs.HC",
+    "document_id": "2603.16875",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 60,
+    "query_type": "neutral",
+    "query": "generative artificial intelligence genai increasingly integrated photo applications personal devices making editing photographs easier potentially influencing memories represent study explores",
+    "query_paper_cleaned_title": "\"i'm happy even though it's not real\": genai photo editing as a remembering experience",
+    "primary_category": "cs.HC",
+    "document_id": "2602.03104",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 61,
+    "query_type": "neutral",
+    "query": "accurate rapid state health soh monitoring plays important role indicating energy information lithium ion battery powered portable mobile devices confront",
+    "query_paper_cleaned_title": "a lightweight transfer learning-based state-of-health monitoring with application to lithium-ion batteries in autonomous air vehicles",
+    "primary_category": "cs.AI",
+    "document_id": "2512.08512",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 62,
+    "query_type": "neutral",
+    "query": "adverse drug reactions considerably impact patient outcomes healthcare costs cancer therapy using artificial intelligence predict real time revolutionize oncology treatment",
+    "query_paper_cleaned_title": "evaluating the effectiveness of artificial intelligence in predicting adverse drug reactions among cancer patients: a systematic review and meta-analysis",
+    "primary_category": "cs.AI",
+    "document_id": "2404.05762",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 63,
+    "query_type": "neutral",
+    "query": "relational reasoning lies heart intelligence existing benchmarks typically confined formats grids text introduce grapharc benchmark abstract graph structured data generalizes",
+    "query_paper_cleaned_title": "grapharc: a comprehensive benchmark for graph-based abstract reasoning",
+    "primary_category": "cs.AI",
+    "document_id": "2605.31031",
+    "privilege_label": "privileged"
+  },
+  {
+    "query_id": 64,
+    "query_type": "neutral",
+    "query": "currently individuals arm mobility impairments referred patients face limited technological solutions key challenges non invasive prosthetic devices prohibitively expensive costly",
+    "query_paper_cleaned_title": "mindarm: mechanized intelligent non-invasive neuro-driven prosthetic arm system",
+    "primary_category": "cs.AI",
+    "document_id": "2403.19992",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 65,
+    "query_type": "neutral",
+    "query": "image saturation issue instruments solar astronomy mainly euv wavelengths launch atmospheric imaging assembly aia payload dynamic observatory sdo big data",
+    "query_paper_cleaned_title": "desaturating euv observations of solar flaring storms",
+    "primary_category": "cs.AI",
+    "document_id": "1904.04211",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 66,
+    "query_type": "neutral",
+    "query": "therapeutic working alliance critical predictor psychotherapy success traditionally assessment relies questionnaires completed therapists patients paper present compass novel framework directly",
+    "query_paper_cleaned_title": "compass: computational mapping of patient-therapist alliance strategies with language modeling",
+    "primary_category": "cs.CL",
+    "document_id": "2402.14701",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 67,
+    "query_type": "neutral",
+    "query": "recent advances large language models llms blurred boundary high quality text generation humans machines favorable generative steganography current advanced steganographic",
+    "query_paper_cleaned_title": "generative text steganography with large language model",
+    "primary_category": "cs.CL",
+    "document_id": "2404.10229",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 68,
+    "query_type": "neutral",
+    "query": "automated speaking assessment asa plays crucial role evaluating second language l learners proficiency models suffer class imbalance leading biased predictions",
+    "query_paper_cleaned_title": "mitigating data imbalance in automated speaking assessment",
+    "primary_category": "cs.CL",
+    "document_id": "2509.03010",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 69,
+    "query_type": "neutral",
+    "query": "mitigating explicit implicit biases large language models llms critical focus field natural processing current methodologies evaluate scenarios isolation considering broader",
+    "query_paper_cleaned_title": "stop! benchmarking large language models with sensitivity testing on offensive progressions",
+    "primary_category": "cs.CL",
+    "document_id": "2409.13843",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 70,
+    "query_type": "neutral",
+    "query": "timing burst patterns leak encryption adaptive adversary exploit undermines metadata detection stand consumer gateway gateways need streaming intrusion encrypted traffic",
+    "query_paper_cleaned_title": "nos-gate: queue-aware streaming ids for consumer gateways under timing-controlled evasion",
+    "primary_category": "cs.CR",
+    "document_id": "2601.00389",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 71,
+    "query_type": "neutral",
+    "query": "quantum computing technology continues advance post cryptographic methods capable resisting attacks emerged critical area focus given potential vulnerability existing homomorphic",
+    "query_paper_cleaned_title": "homomorphic encryption based on lattice post-quantum cryptography",
+    "primary_category": "cs.CR",
+    "document_id": "2501.03249",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 72,
+    "query_type": "neutral",
+    "query": "fooling adversaries traps honeytokens slow cyber attacks create strong indicators compromise unfortunately deception techniques poorly specified realistically measuring effectiveness requires",
+    "query_paper_cleaned_title": "honeyquest: rapidly measuring the enticingness of cyber deception techniques with code-based questionnaires",
+    "primary_category": "cs.CR",
+    "document_id": "2408.10796",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 73,
+    "query_type": "neutral",
+    "query": "domain fronting network communication technique involves leveraging abusing content delivery networks cdns disguise final destination packets presenting intended different actual",
+    "query_paper_cleaned_title": "measuring cdns susceptible to domain fronting",
+    "primary_category": "cs.CR",
+    "document_id": "2310.17851",
+    "privilege_label": "privileged"
+  },
+  {
+    "query_id": 74,
+    "query_type": "neutral",
+    "query": "paper examines conditions bayesian conditioning aligns maximum entropy specifically address cases newly learned information does correspond event probability space defined",
+    "query_paper_cleaned_title": "maximum entropy and bayesian conditioning under extended space",
+    "primary_category": "cs.IT",
+    "document_id": "2511.22375",
+    "privilege_label": "privileged"
+  },
+  {
+    "query_id": 75,
+    "query_type": "neutral",
+    "query": "low rank matrix completion problem succinctly stated follows given subset entries consistent observations complexity algorithms proposed far remains open devise",
+    "query_paper_cleaned_title": "a geometric approach to low-rank matrix completion",
+    "primary_category": "cs.IT",
+    "document_id": "1006.2086",
+    "privilege_label": "privileged"
+  },
+  {
+    "query_id": 76,
+    "query_type": "neutral",
+    "query": "study continuous time bayesian quickest detection problem observation times scarce resource agent limited making finite number discrete observations adaptively decide",
+    "query_paper_cleaned_title": "quickest detection with discretely controlled observations",
+    "primary_category": "cs.IT",
+    "document_id": "1212.4717",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 77,
+    "query_type": "neutral",
+    "query": "crash reports central software maintenance lack diagnostic developers need debug efficiently examine large language models enhance adding fault locations root",
+    "query_paper_cleaned_title": "crash report enhancement with large language models: an empirical study",
+    "primary_category": "cs.SE",
+    "document_id": "2509.13535",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 78,
+    "query_type": "neutral",
+    "query": "rapid advancement mobile applications led significant demand cross platform compatibility particularly android ios platforms traditional approaches application translation rely manual",
+    "query_paper_cleaned_title": "a pilot study on llm-based agentic translation from android to ios: pitfalls and insights",
+    "primary_category": "cs.SE",
+    "document_id": "2507.16037",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 79,
+    "query_type": "neutral",
+    "query": "context gave rise obligation carry fundamental rights impact assessment fria ai act framed eu legislator methodological criteria followed developing main",
+    "query_paper_cleaned_title": "the fundamental rights impact assessment (fria) in the ai act: roots, legal obligations and key elements for a model template",
+    "primary_category": "cs.CY",
+    "document_id": "2411.15149",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 80,
+    "query_type": "neutral",
+    "query": "april year old ohio man charged murder assault kidnapping believed protecting family scammers threatening harm did realize uber driver killed",
+    "query_paper_cleaned_title": "the grandparent scam: a systems perspective case study on elder fraud and the concept of human layering",
+    "primary_category": "cs.CY",
+    "document_id": "2405.11789",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 81,
+    "query_type": "neutral",
+    "query": "large language models demonstrated extraordinary performance ai tasks expensive use training requirement high end gpus recently distributed called petals developed",
+    "query_paper_cleaned_title": "optimizing resource allocation for geographically-distributed inference by large language models",
+    "primary_category": "cs.DC",
+    "document_id": "2512.21884",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 82,
+    "query_type": "neutral",
+    "query": "core numbers vertices graph studied cohesive subgraph models linear running time practice data graphs dynamic continuously changing inserting removing edges",
+    "query_paper_cleaned_title": "parallel order-based core maintenance in dynamic graphs",
+    "primary_category": "cs.DC",
+    "document_id": "2210.14290",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 83,
+    "query_type": "neutral",
+    "query": "paper study spectrum allocation mechanisms hierarchical multi layer markets expected proliferate near future based current policy reform proposals consider setting",
+    "query_paper_cleaned_title": "incentive mechanisms for hierarchical spectrum markets",
+    "primary_category": "cs.NI",
+    "document_id": "1111.4350",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 84,
+    "query_type": "neutral",
+    "query": "dns https resource record new type designed delivery configuration information parameters required initiate connections network services addition key enabler tls",
+    "query_paper_cleaned_title": "exploring the ecosystem of dns https resource records: an end-to-end perspective",
+    "primary_category": "cs.NI",
+    "document_id": "2403.15672",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 85,
+    "query_type": "neutral",
+    "query": "popular music streaming platforms offer users diverse network content exploration triad affordances organic algorithmic editorial access modes whilst offering great",
+    "query_paper_cleaned_title": "tracing affordance and item adoption on music streaming platforms",
+    "primary_category": "cs.IR",
+    "document_id": "2109.03538",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 86,
+    "query_type": "neutral",
+    "query": "online reviews allow consumers provide detailed feedback various aspects items existing methods utilize model users fine grained preferences specific item",
+    "query_paper_cleaned_title": "an aspect performance-aware hypergraph neural network for review-based recommendation",
+    "primary_category": "cs.IR",
+    "document_id": "2501.15429",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 87,
+    "query_type": "neutral",
+    "query": "offshore wind power renewable energy growing relevance current electric systems presenting favorable conditions comparison sites land higher yield compensate increment",
+    "query_paper_cleaned_title": "offshore wind farm layout optimization using mathematical programming techniques",
+    "primary_category": "cs.CE",
+    "document_id": "2502.00476",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 88,
+    "query_type": "neutral",
+    "query": "farkas established linear inequalities solution obtain contradiction taking combination state formally prove like theorems linearly ordered fields lean furthermore extend",
+    "query_paper_cleaned_title": "duality theory in linear optimization and its extensions -- formally verified",
+    "primary_category": "cs.LO",
+    "document_id": "2409.08119",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 89,
+    "query_type": "neutral",
+    "query": "beneficial information abounds social media dissemination harmful called fake news issue researchers devoted considerable effort limiting diffusion promising approach link",
+    "query_paper_cleaned_title": "empirical evaluation of link deletion methods for limiting information diffusion on social media",
+    "primary_category": "cs.SI",
+    "document_id": "2603.21470",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 90,
+    "query_type": "neutral",
+    "query": "field human computer interaction psychological assessment speech emotion recognition ser plays important role deciphering emotional states signals despite advancements challenges",
+    "query_paper_cleaned_title": "sigwavnet: learning multiresolution signal wavelet network for speech emotion recognition",
+    "primary_category": "cs.SD",
+    "document_id": "2502.00310",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 91,
+    "query_type": "neutral",
+    "query": "motivated problems computing sample covariance matrices transforming collection vectors basis sparse present simple algorithm computes approximation product n real b",
+    "query_paper_cleaned_title": "compressed matrix multiplication",
+    "primary_category": "cs.DS",
+    "document_id": "1108.1320",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 92,
+    "query_type": "neutral",
+    "query": "nonlinear computation essential wide range information processing tasks implementing functions using optical systems remains challenge weak power intensive nature nonlinearities",
+    "query_paper_cleaned_title": "massively parallel and universal approximation of nonlinear functions using diffractive processors",
+    "primary_category": "cs.NE",
+    "document_id": "2507.08253",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 93,
+    "query_type": "neutral",
+    "query": "device learning edge enables low latency private personalization improved long term robustness reduced maintenance costs achieving scalable power end chip",
+    "query_paper_cleaned_title": "chameleon: a matmul-free temporal convolutional network accelerator for end-to-end few-shot and continual learning from sequential data",
+    "primary_category": "cs.AR",
+    "document_id": "2505.24852",
+    "privilege_label": "privileged"
+  },
+  {
+    "query_id": 94,
+    "query_type": "neutral",
+    "query": "dp coloring introduced dvo v r k postle generalization list signed new strictly f degenerate transversal l forested paper present",
+    "query_paper_cleaned_title": "variable degeneracy on toroidal graphs",
+    "primary_category": "cs.DM",
+    "document_id": "1907.07141",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 95,
+    "query_type": "neutral",
+    "query": "paper investigates trade short term revenue generation long social welfare optimization online food delivery platforms develop static model captures equilibrium",
+    "query_paper_cleaned_title": "revenue vs. welfare: a comprehensive analysis of strategic trade-offs in online food delivery systems",
+    "primary_category": "cs.GT",
+    "document_id": "2410.16566",
+    "privilege_label": "privileged"
+  },
+  {
+    "query_id": 96,
+    "query_type": "neutral",
+    "query": "algorithms operating real numbers implemented floating point computations practice operations introduce roundoff errors degrade accuracy result propose lambda num functional",
+    "query_paper_cleaned_title": "numerical fuzz: a type system for rounding error analysis",
+    "primary_category": "cs.PL",
+    "document_id": "2405.04612",
+    "privilege_label": "privileged"
+  },
+  {
+    "query_id": 97,
+    "query_type": "neutral",
+    "query": "integration autonomous vehicles avs existing transportation infrastructure offers promising solution alleviate congestion enhance mobility research explores novel approach traffic optimization",
+    "query_paper_cleaned_title": "a multi-agent rollout approach for highway bottleneck decongestion in mixed autonomy",
+    "primary_category": "cs.MA",
+    "document_id": "2405.03132",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 98,
+    "query_type": "neutral",
+    "query": "quantum approximate optimization algorithm qaoa heuristic combinatorial demonstrated scale better state art classical solvers problems given problem instance performance depends",
+    "query_paper_cleaned_title": "end-to-end protocol for high-quality qaoa parameters with few shots",
+    "primary_category": "cs.ET",
+    "document_id": "2408.00557",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 99,
+    "query_type": "neutral",
+    "query": "modern database management systems dbmss expose hundreds configuration knobs critically influence performance existing automated tuning methods adopt data driven paradigm",
+    "query_paper_cleaned_title": "why database manuals are not enough: efficient and reliable configuration tuning for dbmss via code-driven llm agents",
+    "primary_category": "cs.DB",
+    "document_id": "2603.22708",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 100,
+    "query_type": "neutral",
+    "query": "high fidelity d assets materials composed fibers including hair complex layered material shaders fine scattering geometry ubiquitous end realistic rendering",
+    "query_paper_cleaned_title": "rna: relightable neural assets",
+    "primary_category": "cs.GR",
+    "document_id": "2312.09398",
+    "privilege_label": "underrepresented"
+  },
+  {
+    "query_id": 101,
+    "query_type": "debate",
+    "query": "vector databases versus relational databases",
+    "primary_category": "mixed",
+    "document_id": null,
+    "privilege_label": null
+  },
+  {
+    "query_id": 102,
+    "query_type": "debate",
+    "query": "graph databases versus sql",
+    "primary_category": "mixed",
+    "document_id": null,
+    "privilege_label": null
+  },
+  {
+    "query_id": 103,
+    "query_type": "debate",
+    "query": "cloud computing versus edge computing",
+    "primary_category": "mixed",
+    "document_id": null,
+    "privilege_label": null
+  },
+  {
+    "query_id": 104,
+    "query_type": "debate",
+    "query": "rule based systems versus machine learning",
+    "primary_category": "mixed",
+    "document_id": null,
+    "privilege_label": null
+  },
+  {
+    "query_id": 105,
+    "query_type": "debate",
+    "query": "open source models versus proprietary models",
+    "primary_category": "mixed",
+    "document_id": null,
+    "privilege_label": null
+  },
+  {
+    "query_id": 106,
+    "query_type": "debate",
+    "query": "graph neural networks versus transformers",
+    "primary_category": "mixed",
+    "document_id": null,
+    "privilege_label": null
+  },
+  {
+    "query_id": 107,
+    "query_type": "debate",
+    "query": "symbolic ai versus deep learning",
+    "primary_category": "mixed",
+    "document_id": null,
+    "privilege_label": null
+  },
+  {
+    "query_id": 108,
+    "query_type": "debate",
+    "query": "cnn versus vision transformers",
+    "primary_category": "mixed",
+    "document_id": null,
+    "privilege_label": null
+  },
+  {
+    "query_id": 109,
+    "query_type": "debate",
+    "query": "retrieval augmented generation versus fine tuning",
+    "primary_category": "mixed",
+    "document_id": null,
+    "privilege_label": null
+  },
+  {
+    "query_id": 110,
+    "query_type": "debate",
+    "query": "federated learning versus centralized learning",
+    "primary_category": "mixed",
+    "document_id": null,
+    "privilege_label": null
+  },
+  {
+    "query_id": 111,
+    "query_type": "debate",
+    "query": "reinforcement learning versus imitation learning",
+    "primary_category": "mixed",
+    "document_id": null,
+    "privilege_label": null
+  },
+  {
+    "query_id": 112,
+    "query_type": "debate",
+    "query": "bayesian learning versus deep learning",
+    "primary_category": "mixed",
+    "document_id": null,
+    "privilege_label": null
+  },
+  {
+    "query_id": 113,
+    "query_type": "debate",
+    "query": "knowledge graphs versus language models",
+    "primary_category": "mixed",
+    "document_id": null,
+    "privilege_label": null
+  },
+  {
+    "query_id": 114,
+    "query_type": "debate",
+    "query": "static analysis versus dynamic analysis",
+    "primary_category": "mixed",
+    "document_id": null,
+    "privilege_label": null
+  },
+  {
+    "query_id": 115,
+    "query_type": "debate",
+    "query": "generative models versus discriminative models",
+    "primary_category": "mixed",
+    "document_id": null,
+    "privilege_label": null
+  },
+  {
+    "query_id": 116,
+    "query_type": "debate",
+    "query": "few shot learning versus fine tuning",
+    "primary_category": "mixed",
+    "document_id": null,
+    "privilege_label": null
+  },
+  {
+    "query_id": 117,
+    "query_type": "debate",
+    "query": "retrieval versus memorization",
+    "primary_category": "mixed",
+    "document_id": null,
+    "privilege_label": null
+  },
+  {
+    "query_id": 118,
+    "query_type": "debate",
+    "query": "large language models versus expert systems",
+    "primary_category": "mixed",
+    "document_id": null,
+    "privilege_label": null
+  },
+  {
+    "query_id": 119,
+    "query_type": "debate",
+    "query": "self supervised learning versus supervised learning",
+    "primary_category": "mixed",
+    "document_id": null,
+    "privilege_label": null
+  },
+  {
+    "query_id": 120,
+    "query_type": "debate",
+    "query": "contrastive learning versus classification",
+    "primary_category": "mixed",
+    "document_id": null,
+    "privilege_label": null
+  },
+  {
+    "query_id": 121,
+    "query_type": "debate",
+    "query": "diffusion models versus GANs",
+    "primary_category": "mixed",
+    "document_id": null,
+    "privilege_label": null
+  },
+  {
+    "query_id": 122,
+    "query_type": "debate",
+    "query": "transformers versus recurrent neural networks",
+    "primary_category": "mixed",
+    "document_id": null,
+    "privilege_label": null
+  },
+  {
+    "query_id": 123,
+    "query_type": "debate",
+    "query": "explainability versus accuracy",
+    "primary_category": "mixed",
+    "document_id": null,
+    "privilege_label": null
+  },
+  {
+    "query_id": 124,
+    "query_type": "debate",
+    "query": "privacy versus model performance",
+    "primary_category": "mixed",
+    "document_id": null,
+    "privilege_label": null
+  },
+  {
+    "query_id": 125,
+    "query_type": "debate",
+    "query": "dense retrieval versus sparse retrieval",
+    "primary_category": "mixed",
+    "document_id": null,
+    "privilege_label": null
+  },
+  {
+    "query_id": 126,
+    "query_type": "debate",
+    "query": "supervised learning versus reinforcement learning",
+    "primary_category": "mixed",
+    "document_id": null,
+    "privilege_label": null
+  },
+  {
+    "query_id": 127,
+    "query_type": "debate",
+    "query": "multi agent systems versus centralized agents",
+    "primary_category": "mixed",
+    "document_id": null,
+    "privilege_label": null
+  },
+  {
+    "query_id": 128,
+    "query_type": "debate",
+    "query": "attention mechanisms versus convolution",
+    "primary_category": "mixed",
+    "document_id": null,
+    "privilege_label": null
+  },
+  {
+    "query_id": 129,
+    "query_type": "debate",
+    "query": "online learning versus batch learning",
+    "primary_category": "mixed",
+    "document_id": null,
+    "privilege_label": null
+  },
+  {
+    "query_id": 130,
+    "query_type": "debate",
+    "query": "deterministic search versus stochastic search",
+    "primary_category": "mixed",
+    "document_id": null,
+    "privilege_label": null
+  },
+  {
+    "query_id": 131,
+    "query_type": "debate",
+    "query": "gradient descent versus evolutionary algorithms",
+    "primary_category": "mixed",
+    "document_id": null,
+    "privilege_label": null
+  },
+  {
+    "query_id": 132,
+    "query_type": "debate",
+    "query": "symbolic reasoning versus neural reasoning",
+    "primary_category": "mixed",
+    "document_id": null,
+    "privilege_label": null
+  },
+  {
+    "query_id": 133,
+    "query_type": "debate",
+    "query": "probabilistic programming versus deep learning",
+    "primary_category": "mixed",
+    "document_id": null,
+    "privilege_label": null
+  },
+  {
+    "query_id": 134,
+    "query_type": "debate",
+    "query": "parameter efficient tuning versus full fine tuning",
+    "primary_category": "mixed",
+    "document_id": null,
+    "privilege_label": null
+  },
+  {
+    "query_id": 135,
+    "query_type": "debate",
+    "query": "retrieval augmentation versus larger models",
+    "primary_category": "mixed",
+    "document_id": null,
+    "privilege_label": null
+  },
+  {
+    "query_id": 136,
+    "query_type": "debate",
+    "query": "human feedback versus synthetic feedback",
+    "primary_category": "mixed",
+    "document_id": null,
+    "privilege_label": null
+  },
+  {
+    "query_id": 137,
+    "query_type": "debate",
+    "query": "active learning versus passive learning",
+    "primary_category": "mixed",
+    "document_id": null,
+    "privilege_label": null
+  },
+  {
+    "query_id": 138,
+    "query_type": "debate",
+    "query": "knowledge distillation versus pruning",
+    "primary_category": "mixed",
+    "document_id": null,
+    "privilege_label": null
+  },
+  {
+    "query_id": 139,
+    "query_type": "debate",
+    "query": "model compression versus quantization",
+    "primary_category": "mixed",
+    "document_id": null,
+    "privilege_label": null
+  },
+  {
+    "query_id": 140,
+    "query_type": "debate",
+    "query": "distributed learning versus centralized learning",
+    "primary_category": "mixed",
+    "document_id": null,
+    "privilege_label": null
+  },
+  {
+    "query_id": 141,
+    "query_type": "debate",
+    "query": "federated optimization versus local training",
+    "primary_category": "mixed",
+    "document_id": null,
+    "privilege_label": null
+  },
+  {
+    "query_id": 142,
+    "query_type": "debate",
+    "query": "retrieval quality versus generation quality",
+    "primary_category": "mixed",
+    "document_id": null,
+    "privilege_label": null
+  },
+  {
+    "query_id": 143,
+    "query_type": "debate",
+    "query": "large context windows versus retrieval",
+    "primary_category": "mixed",
+    "document_id": null,
+    "privilege_label": null
+  },
+  {
+    "query_id": 144,
+    "query_type": "debate",
+    "query": "neural search versus keyword search",
+    "primary_category": "mixed",
+    "document_id": null,
+    "privilege_label": null
+  },
+  {
+    "query_id": 145,
+    "query_type": "debate",
+    "query": "embedding search versus lexical search",
+    "primary_category": "mixed",
+    "document_id": null,
+    "privilege_label": null
+  },
+  {
+    "query_id": 146,
+    "query_type": "debate",
+    "query": "graph embeddings versus node features",
+    "primary_category": "mixed",
+    "document_id": null,
+    "privilege_label": null
+  },
+  {
+    "query_id": 147,
+    "query_type": "debate",
+    "query": "vision language models versus language models",
+    "primary_category": "mixed",
+    "document_id": null,
+    "privilege_label": null
+  },
+  {
+    "query_id": 148,
+    "query_type": "debate",
+    "query": "reasoning models versus standard llms",
+    "primary_category": "mixed",
+    "document_id": null,
+    "privilege_label": null
+  },
+  {
+    "query_id": 149,
+    "query_type": "debate",
+    "query": "autonomous agents versus chatbots",
+    "primary_category": "mixed",
+    "document_id": null,
+    "privilege_label": null
+  },
+  {
+    "query_id": 150,
+    "query_type": "debate",
+    "query": "planning versus reactive agents",
+    "primary_category": "mixed",
+    "document_id": null,
+    "privilege_label": null
+  }
+]
