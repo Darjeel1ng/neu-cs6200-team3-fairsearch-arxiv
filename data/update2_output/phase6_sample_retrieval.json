@@ -3,60 +3,60 @@
     "rank": 1,
     "score": 0.7322218087810846,
     "title": "CombiGCN: An effective GCN model for Recommender System",
-    "abstract": "CombiGCN: An effective GCN model for Recommender System Graph Neural Networks (GNNs) have opened up a potential line of research for collaborative filtering (CF). The key power of GNNs is based on inj..."
+    "abstract": "CombiGCN: An effective GCN model for Recommender System Graph Neural Networks (GNNs) have opened up a potential line of research for collaborative filtering (CF). The key power of GNNs is based on injecting col..."
   },
   {
     "rank": 2,
     "score": 0.7212559683950825,
     "title": "Graph-Sequential Alignment and Uniformity: Toward Enhanced\n  Recommendation Systems",
-    "abstract": "Graph-Sequential Alignment and Uniformity: Toward Enhanced Recommendation Systems Graph-based and sequential methods are two popular recommendation paradigms, each excelling in its domain but lacking ..."
+    "abstract": "Graph-Sequential Alignment and Uniformity: Toward Enhanced Recommendation Systems Graph-based and sequential methods are two popular recommendation paradigms, each excelling in its domain but lacking the abilit..."
   },
   {
     "rank": 3,
     "score": 0.710603174493216,
     "title": "Sheaf4Rec: Sheaf Neural Networks for Graph-based Recommender Systems",
-    "abstract": "Sheaf4Rec: Sheaf Neural Networks for Graph-based Recommender Systems Recent advancements in Graph Neural Networks (GNN) have facilitated their widespread adoption in various applications, including re..."
+    "abstract": "Sheaf4Rec: Sheaf Neural Networks for Graph-based Recommender Systems Recent advancements in Graph Neural Networks (GNN) have facilitated their widespread adoption in various applications, including recommendati..."
   },
   {
     "rank": 4,
     "score": 0.7045488477810945,
     "title": "Knowledge-Enhanced Recommendation with User-Centric Subgraph Network",
-    "abstract": "Knowledge-Enhanced Recommendation with User-Centric Subgraph Network Recommendation systems, as widely implemented nowadays on various platforms, recommend relevant items to users based on their prefe..."
+    "abstract": "Knowledge-Enhanced Recommendation with User-Centric Subgraph Network Recommendation systems, as widely implemented nowadays on various platforms, recommend relevant items to users based on their preferences. Th..."
   },
   {
     "rank": 5,
     "score": 0.7036064527285624,
     "title": "Improvement Graph Convolution Collaborative Filtering with Weighted\n  addition input",
-    "abstract": "Improvement Graph Convolution Collaborative Filtering with Weighted addition input Graph Neural Networks have been extensively applied in the field of machine learning to find features of graphs, and ..."
+    "abstract": "Improvement Graph Convolution Collaborative Filtering with Weighted addition input Graph Neural Networks have been extensively applied in the field of machine learning to find features of graphs, and recommenda..."
   },
   {
     "rank": 6,
     "score": 0.699739093740788,
     "title": "MixDec Sampling: A Soft Link-based Sampling Method of Graph Neural\n  Network for Recommendation",
-    "abstract": "MixDec Sampling: A Soft Link-based Sampling Method of Graph Neural Network for Recommendation Graph neural networks have been widely used in recent recommender systems, where negative sampling plays a..."
+    "abstract": "MixDec Sampling: A Soft Link-based Sampling Method of Graph Neural Network for Recommendation Graph neural networks have been widely used in recent recommender systems, where negative sampling plays an importan..."
   },
   {
     "rank": 7,
     "score": 0.688545899943068,
     "title": "Eco-Aware Graph Neural Networks for Sustainable Recommendations",
-    "abstract": "Eco-Aware Graph Neural Networks for Sustainable Recommendations Recommender systems play a crucial role in alleviating information overload by providing personalized recommendations tailored to users'..."
+    "abstract": "Eco-Aware Graph Neural Networks for Sustainable Recommendations Recommender systems play a crucial role in alleviating information overload by providing personalized recommendations tailored to users' preferenc..."
   },
   {
     "rank": 8,
     "score": 0.6815606872803487,
     "title": "The Limits of Graph Samplers for Training Inductive Recommender Systems: Extended results",
-    "abstract": "The Limits of Graph Samplers for Training Inductive Recommender Systems: Extended results Inductive Recommender Systems are capable of recommending for new users and with new items thus avoiding the n..."
+    "abstract": "The Limits of Graph Samplers for Training Inductive Recommender Systems: Extended results Inductive Recommender Systems are capable of recommending for new users and with new items thus avoiding the need to ret..."
   },
   {
     "rank": 9,
     "score": 0.6808489172764631,
     "title": "Bi-Level Graph Structure Learning for Next POI Recommendation",
-    "abstract": "Bi-Level Graph Structure Learning for Next POI Recommendation Next point-of-interest (POI) recommendation aims to predict a user's next destination based on sequential check-in history and a set of PO..."
+    "abstract": "Bi-Level Graph Structure Learning for Next POI Recommendation Next point-of-interest (POI) recommendation aims to predict a user's next destination based on sequential check-in history and a set of POI candidat..."
   },
   {
     "rank": 10,
     "score": 0.6788593467570547,
     "title": "Representation Learning with Large Language Models for Recommendation",
-    "abstract": "Representation Learning with Large Language Models for Recommendation Recommender systems have seen significant advancements with the influence of deep learning and graph neural networks, particularly..."
+    "abstract": "Representation Learning with Large Language Models for Recommendation Recommender systems have seen significant advancements with the influence of deep learning and graph neural networks, particularly in captur..."
   }
 ]

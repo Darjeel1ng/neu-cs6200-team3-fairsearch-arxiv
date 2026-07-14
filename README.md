@@ -45,8 +45,8 @@ Update2_output folder:
 - Phase 7: `queries.json`, `query_benchmark_report.json`
 - Phase 8: `naive_retrieval_results.json`, `retrieval_parity_report.json` and figures
 - Phase 9: `mmr_reranked_results.json`, `lambda_ablation.csv` and figures
-- Phase 10:
-- Phase 11:  
+- Phase 10: 
+- Phase 11: Development of a Streamlit-based diagnostic interface, this is for update3
 
 These let you sanity-check each phase without opening the parquet files.
 
@@ -161,7 +161,7 @@ real institution to (so the fairness labels in Phase 3 are meaningful).
 
 ---
 
-## Update 2: Roadmap (Phase 6-11)
+## Update 2: Roadmap (Phase 6+)
 
 Phases 1-5 build the labeled corpus, fairness priors, and ChromaDB index. The
 phases below cover the RAG-fairness pipeline described in the two project reports
@@ -223,7 +223,7 @@ goal, expected inputs, and expected outputs.
 
 ---
 
-## Update 2: Results (Phase 6-11), based on 150-query evaluation set:
+## Update 2: Results (Phase 6-9), based on 150-query evaluation set:
 
 **Fairness labels (`privilege_label`)**
 - **Baseline**
@@ -232,8 +232,8 @@ goal, expected inputs, and expected outputs.
   - unknown: 0%
   - privileged : underrepresented ≈ 0.21
 - **Observed**
-  - privileged: **16.5%** (8,150 papers)
-  - underrepresented: **83.5%** (41,750 papers)
+  - privileged: **16.5%**
+  - underrepresented: **83.5%**
   - unknown: 0%
   - privileged : underrepresented ≈ 0.198
 

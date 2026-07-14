@@ -53,6 +53,12 @@
     "Africa": 0.954198,
     "Unknown": 1.453488
   },
+  "group_tpr": {
+    "underrepresented": 0.9125,
+    "privileged": 0.9,
+    "NaN": 0.0
+  },
+  "gap": 0.012499999999999956,
   "category_breakdown": {
     "cs.AI": {
       "n_retrieved": 100,
