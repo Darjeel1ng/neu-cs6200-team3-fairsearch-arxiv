@@ -1,0 +1,187 @@
+{
+  "sampled_query_ids": [
+    4,
+    5,
+    12,
+    14,
+    15,
+    18,
+    26,
+    28,
+    29,
+    30,
+    32,
+    36,
+    54,
+    55,
+    65,
+    70,
+    72,
+    76,
+    78,
+    82,
+    85,
+    87,
+    89,
+    90,
+    94,
+    95,
+    98,
+    101,
+    107,
+    110,
+    111,
+    114,
+    118,
+    122,
+    128,
+    129,
+    138,
+    143,
+    145,
+    148
+  ],
+  "sample_size": 40,
+  "retrieved_privilege_mix": {
+    "underrepresented": 0.8429,
+    "privileged": 0.1571
+  },
+  "cited_privilege_mix_by_variant": {
+    "balanced": {
+      "privileged": 0.1719,
+      "underrepresented": 0.8281
+    },
+    "standard": {
+      "privileged": 0.197,
+      "underrepresented": 0.803
+    }
+  },
+  "retrieved_region_mix": {
+    "Europe": 0.46,
+    "North America": 0.2571,
+    "Asia": 0.2057,
+    "Oceania": 0.0486,
+    "South America": 0.0171,
+    "Africa": 0.0114
+  },
+  "cited_region_mix_by_variant": {
+    "balanced": {
+      "Africa": 0.0117,
+      "Asia": 0.1875,
+      "Europe": 0.4766,
+      "North America": 0.2539,
+      "Oceania": 0.0547,
+      "South America": 0.0156
+    },
+    "standard": {
+      "Africa": 0.0099,
+      "Asia": 0.1724,
+      "Europe": 0.4975,
+      "North America": 0.2562,
+      "Oceania": 0.0542,
+      "South America": 0.0099
+    }
+  },
+  "failed_synthesis_variants": [
+    [
+      29,
+      "balanced",
+      "refusal"
+    ],
+    [
+      29,
+      "standard",
+      "refusal"
+    ],
+    [
+      54,
+      "balanced",
+      "refusal"
+    ],
+    [
+      54,
+      "standard",
+      "refusal"
+    ],
+    [
+      72,
+      "balanced",
+      "refusal"
+    ],
+    [
+      72,
+      "standard",
+      "refusal"
+    ],
+    [
+      78,
+      "balanced",
+      "refusal"
+    ],
+    [
+      78,
+      "standard",
+      "refusal"
+    ],
+    [
+      89,
+      "balanced",
+      "refusal"
+    ],
+    [
+      89,
+      "standard",
+      "refusal"
+    ],
+    [
+      94,
+      "balanced",
+      "refusal"
+    ],
+    [
+      94,
+      "standard",
+      "refusal"
+    ]
+  ],
+  "failed_stance_queries": [
+    [
+      29,
+      "refusal"
+    ],
+    [
+      72,
+      "refusal"
+    ],
+    [
+      78,
+      "refusal"
+    ],
+    [
+      89,
+      "refusal"
+    ],
+    [
+      94,
+      "refusal"
+    ]
+  ],
+  "hallucinated_citations": 0,
+  "stance_distribution": {
+    "neutral": 0.6171,
+    "pro-consensus": 0.2857,
+    "dissenting": 0.0971
+  },
+  "faithfulness_summary": {
+    "balanced": {
+      "mean": 0.9419,
+      "median": 0.951,
+      "std": 0.0644
+    },
+    "standard": {
+      "mean": 0.9623,
+      "median": 1.0,
+      "std": 0.0548
+    }
+  }
+}
