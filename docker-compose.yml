@@ -1,0 +1,27 @@
+services:
+  dashboard:
+    build:
+      context: .
+      args:
+        INSTALL_LIVE_RETRIEVAL: "false"
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./data:/app/data:ro
+    environment:
+      DASHBOARD_DATA_ROOT: /app/data
+
+  # Opt-in profile that bundles the live-retrieval deps. Run with:
+  #   docker compose --profile live up dashboard-live
+  dashboard-live:
+    profiles: ["live"]
+    build:
+      context: .
+      args:
+        INSTALL_LIVE_RETRIEVAL: "true"
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./data:/app/data:ro
+    environment:
+      DASHBOARD_DATA_ROOT: /app/data
