@@ -1,0 +1,39 @@
+# Requirements for work_notebook.ipynb (Phases 1-10).
+#
+# Reverse-engineered from every `import`/`from` statement actually present in
+# the notebook
+#
+# Most versions are left unpinned since this file is reverse-engineered from
+# a previously working environment, not a fresh one -- pinning a guessed
+# version could downgrade something that already works. The two exceptions
+# (ragas, langchain-community) are pinned because a newer combination is
+# confirmed broken: ragas >=0.3 imports ChatVertexAI from a langchain-community
+# path that was removed in recent langchain-community releases.
+
+# Core data science
+pandas
+numpy
+scikit-learn
+matplotlib
+pyarrow
+duckdb
+
+# Corpus acquisition / external APIs (Phase 1)
+kagglehub
+requests
+pyyaml
+tqdm
+
+# Vector index / retrieval pipeline (Phase 5-6)
+chromadb
+sentence-transformers
+llama-index-core
+llama-index-embeddings-huggingface
+llama-index-vector-stores-chroma
+
+# LLM synthesis, faithfulness, and stance classification (Phase 10)
+anthropic
+pydantic
+ragas==0.2.15
+langchain-community==0.3.19
+langchain-anthropic
