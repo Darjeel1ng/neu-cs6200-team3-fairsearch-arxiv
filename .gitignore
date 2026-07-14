@@ -5,3 +5,4 @@ chroma_db
 .DS_Store
 __pycache__
 *.pyc
+camille-docs/
