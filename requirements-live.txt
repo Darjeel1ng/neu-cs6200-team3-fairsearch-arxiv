@@ -1,0 +1,7 @@
+# Optional: only needed for live free-text retrieval against chroma_db.
+# pip install -r requirements.txt -r requirements-live.txt
+chromadb==0.5.5
+llama-index-core==0.11.14
+llama-index-vector-stores-chroma==0.2.0
+llama-index-embeddings-huggingface==0.3.1
+sentence-transformers==3.1.1
