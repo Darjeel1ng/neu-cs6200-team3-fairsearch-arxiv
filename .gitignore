@@ -6,3 +6,14 @@ chroma_db
 __pycache__
 *.pyc
 camille-docs/
+
+# Phase 1 intermediates and stale outputs from older notebook versions --
+# regenerable, and too big for GitHub.
+data/cs_candidate_pool.parquet
+data/final_50k_cs_corpus.parquet
+data/final_50k_labeled_enriched.parquet
+
+# OpenAlex cache backups / salvage attempts and debug scratch dumps.
+data/openalex_gate_cache.json.*
+data/openalex_gate_cache.salvaged.json
+data/_*.txt

@@ -13,6 +13,11 @@
     "Africa": 0.00524,
     "Unknown": 0.00344
   },
+  "geo_group_prior": {
+    "high_resource": 0.81098,
+    "emerging": 0.186,
+    "unknown": 0.00302
+  },
   "privilege_representation_vs_uniform": {
     "underrepresented": 1.65788,
     "privileged": 0.34212
@@ -25,6 +30,11 @@
     "South America": 0.1043,
     "Africa": 0.036680000000000004,
     "Unknown": 0.02408
+  },
+  "geo_group_representation_vs_uniform": {
+    "high_resource": 2.4329400000000003,
+    "emerging": 0.558,
+    "unknown": 0.00906
   },
   "privileged_to_underrepresented_ratio": 0.2063599295485801,
   "institution_gini": 0.7524784638706418,

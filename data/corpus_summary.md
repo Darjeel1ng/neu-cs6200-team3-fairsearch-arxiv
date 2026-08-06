@@ -11,6 +11,11 @@
 - unknown: 0.0000 (0 papers)
 - privileged : underrepresented ratio: 0.206
 
+## Fairness group priors (geo_group, World Bank income proxy)
+- high_resource: 0.8110 (40549 papers)
+- emerging: 0.1860 (9300 papers)
+- unknown: 0.0030 (151 papers)
+
 ## Region distribution
 - Europe: 0.4306
 - North America: 0.2701
@@ -64,6 +69,7 @@
 
 ## Figures
 - figures\privilege_label.png
+- figures\geo_group.png
 - figures\region.png
 - figures\primary_category.png
 - figures\year.png

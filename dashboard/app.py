@@ -5,7 +5,7 @@ from dashboard.tabs import (
     fairness_metrics,
     lambda_tradeoff,
     query_explorer,
-    synthesis_placeholder,
+    synthesis,
 )
 
 st.set_page_config(page_title="FairSearch-arXiv Dashboard", layout="wide")
@@ -28,7 +28,7 @@ tab_explorer, tab_fairness, tab_lambda, tab_synthesis = st.tabs(
         "Query Explorer",
         "Fairness Metrics",
         "Lambda Tradeoff",
-        "Synthesis Faithfulness (coming soon)",
+        "Synthesis Faithfulness",
     ]
 )
 
@@ -42,4 +42,4 @@ with tab_lambda:
     lambda_tradeoff.render()
 
 with tab_synthesis:
-    synthesis_placeholder.render()
+    synthesis.render()

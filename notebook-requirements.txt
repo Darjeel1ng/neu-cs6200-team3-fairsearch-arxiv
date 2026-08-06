@@ -32,8 +32,13 @@ llama-index-embeddings-huggingface
 llama-index-vector-stores-chroma
 
 # LLM synthesis, faithfulness, and stance classification (Phase 10)
-anthropic
+# Generator, stance classifier and RAGAS judge all run on DeepSeek's
+# OpenAI-compatible API, so the plain `openai` SDK covers generation and
+# `langchain-deepseek` covers the RAGAS judge. langchain-huggingface supplies
+# the all-MiniLM embeddings that RAGAS answer-relevancy needs.
+openai
 pydantic
 ragas==0.2.15
 langchain-community==0.3.19
-langchain-anthropic
+langchain-deepseek
+langchain-huggingface
