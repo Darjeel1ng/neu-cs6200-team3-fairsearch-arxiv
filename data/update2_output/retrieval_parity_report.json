@@ -19,44 +19,64 @@
     "Unknown": 0.00344
   },
   "observed_region": {
-    "Europe": 0.462333,
-    "North America": 0.263333,
-    "Asia": 0.223,
+    "Europe": 0.463,
+    "North America": 0.262333,
+    "Asia": 0.223333,
     "Oceania": 0.028,
     "South America": 0.013333,
     "Unknown": 0.005,
     "Africa": 0.005
+  },
+  "baseline_geo_group": {
+    "high_resource": 0.81098,
+    "emerging": 0.186,
+    "unknown": 0.00302
+  },
+  "observed_geo_group": {
+    "high_resource": 0.837333,
+    "emerging": 0.159333,
+    "unknown": 0.003333
   },
   "spd_privilege": {
     "underrepresented": 0.00606,
     "privileged": -0.00606
   },
   "spd_region": {
-    "Europe": 0.031773,
-    "North America": -0.006807,
-    "Asia": -0.02966,
+    "Europe": 0.03244,
+    "North America": -0.007807,
+    "Asia": -0.029327,
     "Oceania": 0.00494,
     "South America": -0.001567,
     "Africa": -0.00024,
     "Unknown": 0.00156
+  },
+  "spd_geo_group": {
+    "high_resource": 0.026353,
+    "emerging": -0.026667,
+    "unknown": 0.000313
   },
   "srr_privilege": {
     "underrepresented": 1.007311,
     "privileged": 0.964574
   },
   "srr_region": {
-    "Europe": 1.073795,
-    "North America": 0.974802,
-    "Asia": 0.882609,
+    "Europe": 1.075344,
+    "North America": 0.9711,
+    "Asia": 0.883927,
     "Oceania": 1.214224,
     "South America": 0.894832,
     "Africa": 0.954198,
     "Unknown": 1.453488
   },
+  "srr_geo_group": {
+    "high_resource": 1.032495,
+    "emerging": 0.856629,
+    "unknown": 1.103642
+  },
   "group_tpr": {
     "underrepresented": 0.9125,
     "privileged": 0.9,
-    "NaN": 0.0
+    "null": 0.0
   },
   "gap": 0.012499999999999956,
   "category_breakdown": {

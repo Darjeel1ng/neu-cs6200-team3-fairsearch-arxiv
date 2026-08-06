@@ -53,5 +53,777 @@
     "cs.OS": 0,
     "cs.OH": 0,
     "cs.GL": 0
+  },
+  "difficulty_thresholds": {
+    "Easy": "gt rank <= 3",
+    "Medium": "gt rank 4-10",
+    "Hard": "gt not in top-10 (known-item only)"
+  },
+  "difficulty_distribution": {
+    "Easy": 83,
+    "Medium": 7,
+    "Hard": 10
+  },
+  "spd_classification_thresholds": {
+    "Biased": "SPD_privileged > 0.05",
+    "Fair": "|SPD_privileged| <= 0.05",
+    "Over-corrected": "SPD_privileged < -0.05"
+  },
+  "spd_classification_distribution": {
+    "Biased": 39,
+    "Fair": 34,
+    "Over-corrected": 77
+  },
+  "per_query_classification": {
+    "1": {
+      "difficulty": "Easy",
+      "spd_privileged": 0.0289,
+      "spd_class": "Fair"
+    },
+    "2": {
+      "difficulty": "Easy",
+      "spd_privileged": -0.0711,
+      "spd_class": "Over-corrected"
+    },
+    "3": {
+      "difficulty": "Easy",
+      "spd_privileged": 0.1289,
+      "spd_class": "Biased"
+    },
+    "4": {
+      "difficulty": "Easy",
+      "spd_privileged": 0.1289,
+      "spd_class": "Biased"
+    },
+    "5": {
+      "difficulty": "Easy",
+      "spd_privileged": -0.0711,
+      "spd_class": "Over-corrected"
+    },
+    "6": {
+      "difficulty": "Easy",
+      "spd_privileged": -0.0711,
+      "spd_class": "Over-corrected"
+    },
+    "7": {
+      "difficulty": "Easy",
+      "spd_privileged": -0.0711,
+      "spd_class": "Over-corrected"
+    },
+    "8": {
+      "difficulty": "Easy",
+      "spd_privileged": -0.0711,
+      "spd_class": "Over-corrected"
+    },
+    "9": {
+      "difficulty": "Easy",
+      "spd_privileged": 0.0289,
+      "spd_class": "Fair"
+    },
+    "10": {
+      "difficulty": "Easy",
+      "spd_privileged": -0.1711,
+      "spd_class": "Over-corrected"
+    },
+    "11": {
+      "difficulty": "Easy",
+      "spd_privileged": 0.0289,
+      "spd_class": "Fair"
+    },
+    "12": {
+      "difficulty": "Easy",
+      "spd_privileged": 0.1289,
+      "spd_class": "Biased"
+    },
+    "13": {
+      "difficulty": "Easy",
+      "spd_privileged": 0.0289,
+      "spd_class": "Fair"
+    },
+    "14": {
+      "difficulty": "Easy",
+      "spd_privileged": -0.1711,
+      "spd_class": "Over-corrected"
+    },
+    "15": {
+      "difficulty": "Easy",
+      "spd_privileged": 0.2289,
+      "spd_class": "Biased"
+    },
+    "16": {
+      "difficulty": "Easy",
+      "spd_privileged": 0.1289,
+      "spd_class": "Biased"
+    },
+    "17": {
+      "difficulty": "Easy",
+      "spd_privileged": 0.1289,
+      "spd_class": "Biased"
+    },
+    "18": {
+      "difficulty": "Easy",
+      "spd_privileged": 0.0289,
+      "spd_class": "Fair"
+    },
+    "19": {
+      "difficulty": "Easy",
+      "spd_privileged": -0.1711,
+      "spd_class": "Over-corrected"
+    },
+    "20": {
+      "difficulty": "Hard",
+      "spd_privileged": 0.1289,
+      "spd_class": "Biased"
+    },
+    "21": {
+      "difficulty": "Hard",
+      "spd_privileged": 0.0289,
+      "spd_class": "Fair"
+    },
+    "22": {
+      "difficulty": "Easy",
+      "spd_privileged": -0.0711,
+      "spd_class": "Over-corrected"
+    },
+    "23": {
+      "difficulty": "Easy",
+      "spd_privileged": 0.0289,
+      "spd_class": "Fair"
+    },
+    "24": {
+      "difficulty": "Medium",
+      "spd_privileged": 0.0289,
+      "spd_class": "Fair"
+    },
+    "25": {
+      "difficulty": "Hard",
+      "spd_privileged": 0.0289,
+      "spd_class": "Fair"
+    },
+    "26": {
+      "difficulty": "Easy",
+      "spd_privileged": 0.2289,
+      "spd_class": "Biased"
+    },
+    "27": {
+      "difficulty": "Easy",
+      "spd_privileged": -0.0711,
+      "spd_class": "Over-corrected"
+    },
+    "28": {
+      "difficulty": "Medium",
+      "spd_privileged": 0.0289,
+      "spd_class": "Fair"
+    },
+    "29": {
+      "difficulty": "Easy",
+      "spd_privileged": 0.0289,
+      "spd_class": "Fair"
+    },
+    "30": {
+      "difficulty": "Easy",
+      "spd_privileged": -0.0711,
+      "spd_class": "Over-corrected"
+    },
+    "31": {
+      "difficulty": "Easy",
+      "spd_privileged": 0.0289,
+      "spd_class": "Fair"
+    },
+    "32": {
+      "difficulty": "Easy",
+      "spd_privileged": -0.0711,
+      "spd_class": "Over-corrected"
+    },
+    "33": {
+      "difficulty": "Easy",
+      "spd_privileged": -0.0711,
+      "spd_class": "Over-corrected"
+    },
+    "34": {
+      "difficulty": "Hard",
+      "spd_privileged": -0.0711,
+      "spd_class": "Over-corrected"
+    },
+    "35": {
+      "difficulty": "Easy",
+      "spd_privileged": -0.1711,
+      "spd_class": "Over-corrected"
+    },
+    "36": {
+      "difficulty": "Easy",
+      "spd_privileged": 0.0289,
+      "spd_class": "Fair"
+    },
+    "37": {
+      "difficulty": "Hard",
+      "spd_privileged": -0.0711,
+      "spd_class": "Over-corrected"
+    },
+    "38": {
+      "difficulty": "Easy",
+      "spd_privileged": -0.0711,
+      "spd_class": "Over-corrected"
+    },
+    "39": {
+      "difficulty": "Easy",
+      "spd_privileged": 0.2289,
+      "spd_class": "Biased"
+    },
+    "40": {
+      "difficulty": "Medium",
+      "spd_privileged": -0.1711,
+      "spd_class": "Over-corrected"
+    },
+    "41": {
+      "difficulty": "Easy",
+      "spd_privileged": 0.1289,
+      "spd_class": "Biased"
+    },
+    "42": {
+      "difficulty": "Easy",
+      "spd_privileged": -0.0711,
+      "spd_class": "Over-corrected"
+    },
+    "43": {
+      "difficulty": "Easy",
+      "spd_privileged": 0.0289,
+      "spd_class": "Fair"
+    },
+    "44": {
+      "difficulty": "Easy",
+      "spd_privileged": -0.0711,
+      "spd_class": "Over-corrected"
+    },
+    "45": {
+      "difficulty": "Easy",
+      "spd_privileged": 0.1289,
+      "spd_class": "Biased"
+    },
+    "46": {
+      "difficulty": "Easy",
+      "spd_privileged": -0.1711,
+      "spd_class": "Over-corrected"
+    },
+    "47": {
+      "difficulty": "Easy",
+      "spd_privileged": 0.1289,
+      "spd_class": "Biased"
+    },
+    "48": {
+      "difficulty": "Easy",
+      "spd_privileged": 0.5289,
+      "spd_class": "Biased"
+    },
+    "49": {
+      "difficulty": "Easy",
+      "spd_privileged": 0.4289,
+      "spd_class": "Biased"
+    },
+    "50": {
+      "difficulty": "Easy",
+      "spd_privileged": -0.0711,
+      "spd_class": "Over-corrected"
+    },
+    "51": {
+      "difficulty": "Easy",
+      "spd_privileged": 0.1289,
+      "spd_class": "Biased"
+    },
+    "52": {
+      "difficulty": "Easy",
+      "spd_privileged": -0.1711,
+      "spd_class": "Over-corrected"
+    },
+    "53": {
+      "difficulty": "Medium",
+      "spd_privileged": 0.0289,
+      "spd_class": "Fair"
+    },
+    "54": {
+      "difficulty": "Easy",
+      "spd_privileged": 0.0289,
+      "spd_class": "Fair"
+    },
+    "55": {
+      "difficulty": "Easy",
+      "spd_privileged": -0.0711,
+      "spd_class": "Over-corrected"
+    },
+    "56": {
+      "difficulty": "Easy",
+      "spd_privileged": -0.0711,
+      "spd_class": "Over-corrected"
+    },
+    "57": {
+      "difficulty": "Easy",
+      "spd_privileged": -0.1711,
+      "spd_class": "Over-corrected"
+    },
+    "58": {
+      "difficulty": "Easy",
+      "spd_privileged": 0.0289,
+      "spd_class": "Fair"
+    },
+    "59": {
+      "difficulty": "Easy",
+      "spd_privileged": 0.2289,
+      "spd_class": "Biased"
+    },
+    "60": {
+      "difficulty": "Easy",
+      "spd_privileged": 0.1289,
+      "spd_class": "Biased"
+    },
+    "61": {
+      "difficulty": "Easy",
+      "spd_privileged": -0.0711,
+      "spd_class": "Over-corrected"
+    },
+    "62": {
+      "difficulty": "Easy",
+      "spd_privileged": 0.1289,
+      "spd_class": "Biased"
+    },
+    "63": {
+      "difficulty": "Easy",
+      "spd_privileged": 0.0289,
+      "spd_class": "Fair"
+    },
+    "64": {
+      "difficulty": "Medium",
+      "spd_privileged": -0.0711,
+      "spd_class": "Over-corrected"
+    },
+    "65": {
+      "difficulty": "Easy",
+      "spd_privileged": -0.0711,
+      "spd_class": "Over-corrected"
+    },
+    "66": {
+      "difficulty": "Easy",
+      "spd_privileged": 0.1289,
+      "spd_class": "Biased"
+    },
+    "67": {
+      "difficulty": "Easy",
+      "spd_privileged": 0.0289,
+      "spd_class": "Fair"
+    },
+    "68": {
+      "difficulty": "Easy",
+      "spd_privileged": -0.1711,
+      "spd_class": "Over-corrected"
+    },
+    "69": {
+      "difficulty": "Easy",
+      "spd_privileged": -0.1711,
+      "spd_class": "Over-corrected"
+    },
+    "70": {
+      "difficulty": "Easy",
+      "spd_privileged": 0.0289,
+      "spd_class": "Fair"
+    },
+    "71": {
+      "difficulty": "Easy",
+      "spd_privileged": -0.0711,
+      "spd_class": "Over-corrected"
+    },
+    "72": {
+      "difficulty": "Easy",
+      "spd_privileged": -0.1711,
+      "spd_class": "Over-corrected"
+    },
+    "73": {
+      "difficulty": "Easy",
+      "spd_privileged": 0.1289,
+      "spd_class": "Biased"
+    },
+    "74": {
+      "difficulty": "Easy",
+      "spd_privileged": 0.0289,
+      "spd_class": "Fair"
+    },
+    "75": {
+      "difficulty": "Easy",
+      "spd_privileged": 0.1289,
+      "spd_class": "Biased"
+    },
+    "76": {
+      "difficulty": "Easy",
+      "spd_privileged": 0.1289,
+      "spd_class": "Biased"
+    },
+    "77": {
+      "difficulty": "Easy",
+      "spd_privileged": -0.1711,
+      "spd_class": "Over-corrected"
+    },
+    "78": {
+      "difficulty": "Easy",
+      "spd_privileged": -0.1711,
+      "spd_class": "Over-corrected"
+    },
+    "79": {
+      "difficulty": "Easy",
+      "spd_privileged": -0.1711,
+      "spd_class": "Over-corrected"
+    },
+    "80": {
+      "difficulty": "Hard",
+      "spd_privileged": -0.0711,
+      "spd_class": "Over-corrected"
+    },
+    "81": {
+      "difficulty": "Hard",
+      "spd_privileged": 0.2289,
+      "spd_class": "Biased"
+    },
+    "82": {
+      "difficulty": "Easy",
+      "spd_privileged": -0.1711,
+      "spd_class": "Over-corrected"
+    },
+    "83": {
+      "difficulty": "Easy",
+      "spd_privileged": -0.0711,
+      "spd_class": "Over-corrected"
+    },
+    "84": {
+      "difficulty": "Easy",
+      "spd_privileged": -0.1711,
+      "spd_class": "Over-corrected"
+    },
+    "85": {
+      "difficulty": "Easy",
+      "spd_privileged": -0.1711,
+      "spd_class": "Over-corrected"
+    },
+    "86": {
+      "difficulty": "Medium",
+      "spd_privileged": -0.1711,
+      "spd_class": "Over-corrected"
+    },
+    "87": {
+      "difficulty": "Medium",
+      "spd_privileged": 0.0289,
+      "spd_class": "Fair"
+    },
+    "88": {
+      "difficulty": "Easy",
+      "spd_privileged": -0.0711,
+      "spd_class": "Over-corrected"
+    },
+    "89": {
+      "difficulty": "Easy",
+      "spd_privileged": -0.0711,
+      "spd_class": "Over-corrected"
+    },
+    "90": {
+      "difficulty": "Hard",
+      "spd_privileged": -0.1711,
+      "spd_class": "Over-corrected"
+    },
+    "91": {
+      "difficulty": "Easy",
+      "spd_privileged": -0.0711,
+      "spd_class": "Over-corrected"
+    },
+    "92": {
+      "difficulty": "Easy",
+      "spd_privileged": -0.0711,
+      "spd_class": "Over-corrected"
+    },
+    "93": {
+      "difficulty": "Hard",
+      "spd_privileged": 0.3289,
+      "spd_class": "Biased"
+    },
+    "94": {
+      "difficulty": "Easy",
+      "spd_privileged": -0.1711,
+      "spd_class": "Over-corrected"
+    },
+    "95": {
+      "difficulty": "Easy",
+      "spd_privileged": 0.1289,
+      "spd_class": "Biased"
+    },
+    "96": {
+      "difficulty": "Easy",
+      "spd_privileged": 0.1289,
+      "spd_class": "Biased"
+    },
+    "97": {
+      "difficulty": "Easy",
+      "spd_privileged": 0.3289,
+      "spd_class": "Biased"
+    },
+    "98": {
+      "difficulty": "Hard",
+      "spd_privileged": -0.1711,
+      "spd_class": "Over-corrected"
+    },
+    "99": {
+      "difficulty": "Easy",
+      "spd_privileged": 0.0289,
+      "spd_class": "Fair"
+    },
+    "100": {
+      "difficulty": "Easy",
+      "spd_privileged": 0.1289,
+      "spd_class": "Biased"
+    },
+    "101": {
+      "difficulty": null,
+      "spd_privileged": -0.0711,
+      "spd_class": "Over-corrected"
+    },
+    "102": {
+      "difficulty": null,
+      "spd_privileged": 0.0289,
+      "spd_class": "Fair"
+    },
+    "103": {
+      "difficulty": null,
+      "spd_privileged": -0.0711,
+      "spd_class": "Over-corrected"
+    },
+    "104": {
+      "difficulty": null,
+      "spd_privileged": -0.1711,
+      "spd_class": "Over-corrected"
+    },
+    "105": {
+      "difficulty": null,
+      "spd_privileged": 0.1289,
+      "spd_class": "Biased"
+    },
+    "106": {
+      "difficulty": null,
+      "spd_privileged": -0.0711,
+      "spd_class": "Over-corrected"
+    },
+    "107": {
+      "difficulty": null,
+      "spd_privileged": -0.0711,
+      "spd_class": "Over-corrected"
+    },
+    "108": {
+      "difficulty": null,
+      "spd_privileged": 0.0289,
+      "spd_class": "Fair"
+    },
+    "109": {
+      "difficulty": null,
+      "spd_privileged": -0.1711,
+      "spd_class": "Over-corrected"
+    },
+    "110": {
+      "difficulty": null,
+      "spd_privileged": -0.0711,
+      "spd_class": "Over-corrected"
+    },
+    "111": {
+      "difficulty": null,
+      "spd_privileged": 0.0289,
+      "spd_class": "Fair"
+    },
+    "112": {
+      "difficulty": null,
+      "spd_privileged": -0.0711,
+      "spd_class": "Over-corrected"
+    },
+    "113": {
+      "difficulty": null,
+      "spd_privileged": 0.0289,
+      "spd_class": "Fair"
+    },
+    "114": {
+      "difficulty": null,
+      "spd_privileged": -0.1711,
+      "spd_class": "Over-corrected"
+    },
+    "115": {
+      "difficulty": null,
+      "spd_privileged": 0.1289,
+      "spd_class": "Biased"
+    },
+    "116": {
+      "difficulty": null,
+      "spd_privileged": -0.0711,
+      "spd_class": "Over-corrected"
+    },
+    "117": {
+      "difficulty": null,
+      "spd_privileged": -0.1711,
+      "spd_class": "Over-corrected"
+    },
+    "118": {
+      "difficulty": null,
+      "spd_privileged": 0.0289,
+      "spd_class": "Fair"
+    },
+    "119": {
+      "difficulty": null,
+      "spd_privileged": 0.1289,
+      "spd_class": "Biased"
+    },
+    "120": {
+      "difficulty": null,
+      "spd_privileged": -0.1711,
+      "spd_class": "Over-corrected"
+    },
+    "121": {
+      "difficulty": null,
+      "spd_privileged": -0.1711,
+      "spd_class": "Over-corrected"
+    },
+    "122": {
+      "difficulty": null,
+      "spd_privileged": -0.0711,
+      "spd_class": "Over-corrected"
+    },
+    "123": {
+      "difficulty": null,
+      "spd_privileged": 0.1289,
+      "spd_class": "Biased"
+    },
+    "124": {
+      "difficulty": null,
+      "spd_privileged": -0.1711,
+      "spd_class": "Over-corrected"
+    },
+    "125": {
+      "difficulty": null,
+      "spd_privileged": -0.0711,
+      "spd_class": "Over-corrected"
+    },
+    "126": {
+      "difficulty": null,
+      "spd_privileged": 0.1289,
+      "spd_class": "Biased"
+    },
+    "127": {
+      "difficulty": null,
+      "spd_privileged": 0.3289,
+      "spd_class": "Biased"
+    },
+    "128": {
+      "difficulty": null,
+      "spd_privileged": -0.1711,
+      "spd_class": "Over-corrected"
+    },
+    "129": {
+      "difficulty": null,
+      "spd_privileged": 0.1289,
+      "spd_class": "Biased"
+    },
+    "130": {
+      "difficulty": null,
+      "spd_privileged": -0.0711,
+      "spd_class": "Over-corrected"
+    },
+    "131": {
+      "difficulty": null,
+      "spd_privileged": -0.1711,
+      "spd_class": "Over-corrected"
+    },
+    "132": {
+      "difficulty": null,
+      "spd_privileged": -0.0711,
+      "spd_class": "Over-corrected"
+    },
+    "133": {
+      "difficulty": null,
+      "spd_privileged": 0.1289,
+      "spd_class": "Biased"
+    },
+    "134": {
+      "difficulty": null,
+      "spd_privileged": -0.1711,
+      "spd_class": "Over-corrected"
+    },
+    "135": {
+      "difficulty": null,
+      "spd_privileged": -0.0711,
+      "spd_class": "Over-corrected"
+    },
+    "136": {
+      "difficulty": null,
+      "spd_privileged": 0.1289,
+      "spd_class": "Biased"
+    },
+    "137": {
+      "difficulty": null,
+      "spd_privileged": 0.0289,
+      "spd_class": "Fair"
+    },
+    "138": {
+      "difficulty": null,
+      "spd_privileged": 0.2289,
+      "spd_class": "Biased"
+    },
+    "139": {
+      "difficulty": null,
+      "spd_privileged": 0.0289,
+      "spd_class": "Fair"
+    },
+    "140": {
+      "difficulty": null,
+      "spd_privileged": 0.3289,
+      "spd_class": "Biased"
+    },
+    "141": {
+      "difficulty": null,
+      "spd_privileged": -0.1711,
+      "spd_class": "Over-corrected"
+    },
+    "142": {
+      "difficulty": null,
+      "spd_privileged": -0.1711,
+      "spd_class": "Over-corrected"
+    },
+    "143": {
+      "difficulty": null,
+      "spd_privileged": 0.0289,
+      "spd_class": "Fair"
+    },
+    "144": {
+      "difficulty": null,
+      "spd_privileged": -0.1711,
+      "spd_class": "Over-corrected"
+    },
+    "145": {
+      "difficulty": null,
+      "spd_privileged": -0.1711,
+      "spd_class": "Over-corrected"
+    },
+    "146": {
+      "difficulty": null,
+      "spd_privileged": -0.1711,
+      "spd_class": "Over-corrected"
+    },
+    "147": {
+      "difficulty": null,
+      "spd_privileged": 0.0289,
+      "spd_class": "Fair"
+    },
+    "148": {
+      "difficulty": null,
+      "spd_privileged": -0.0711,
+      "spd_class": "Over-corrected"
+    },
+    "149": {
+      "difficulty": null,
+      "spd_privileged": 0.0289,
+      "spd_class": "Fair"
+    },
+    "150": {
+      "difficulty": null,
+      "spd_privileged": 0.0289,
+      "spd_class": "Fair"
+    }
   }
 }

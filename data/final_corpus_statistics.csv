@@ -56,6 +56,9 @@ country_code,NO,357.0,0.00714
 country_code,IL,346.0,0.00692
 privilege_label,underrepresented,41447.0,0.82894
 privilege_label,privileged,8553.0,0.17106
+geo_group,high_resource,40549.0,0.81098
+geo_group,emerging,9300.0,0.186
+geo_group,unknown,151.0,0.00302
 is_top50_institution,non_top50,41447.0,0.82894
 is_top50_institution,top50,8553.0,0.17106
 institution_confidence_tier,A,47959.0,0.95918
