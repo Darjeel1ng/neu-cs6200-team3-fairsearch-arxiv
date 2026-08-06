@@ -401,7 +401,8 @@ under both prompts and the difference is noise.
 ## Updating the final report
 
 The report's editable source isn't in this repo (the parent folder only has
-PDFs), so [`PAPER_REVISION_CHECKLIST.md`](PAPER_REVISION_CHECKLIST.md) collects
-everything the write-up needs to change: method corrections, the authoritative
-numbers per research question, claims that no longer replicate, and the new
-limitations. Take that file to whatever platform the paper lives on.
+PDFs), so [`PAPER_REVISION_CHECKLIST.md`](PAPER_REVISION_CHECKLIST.md) is the
+bridge: an index of which artifact holds which number, the fixes the current
+draft needs ordered by urgency, the authoritative values to substitute, claims
+that no longer replicate, and the new limitations. Take that file to whatever
+platform the paper lives on.
