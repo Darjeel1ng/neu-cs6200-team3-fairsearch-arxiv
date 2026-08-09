@@ -17,3 +17,5 @@ data/final_50k_labeled_enriched.parquet
 data/openalex_gate_cache.json.*
 data/openalex_gate_cache.salvaged.json
 data/_*.txt
+data/*.parquet
+data/
