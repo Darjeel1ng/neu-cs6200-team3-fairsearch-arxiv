@@ -51,7 +51,8 @@ def render() -> None:
     st.caption(
         "Statistical Parity Difference (SPD) and Selection Rate Ratio (SRR) "
         "of naive retrieval (150 queries) against the Phase 4 corpus priors. "
-        "The audit runs on two independent group dimensions."
+        "The audit runs on three group dimensions: institution tier, geo group, "
+        "and region."
     )
 
     report = data_loader.get_retrieval_parity_report()

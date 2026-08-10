@@ -1,6 +1,8 @@
 import pandas as pd
 import plotly.express as px
+import plotly.graph_objects as go
 import streamlit as st
+from plotly.subplots import make_subplots
 
 from dashboard import data_loader
 
@@ -17,6 +19,32 @@ PARITY_POINT = {"SPD": 0.0, "SRR": 1.0}
 
 def _parity_gap(metric: str, value: float) -> float:
     return abs(value - PARITY_POINT.get(metric.split("_")[0], 0.0))
+
+
+def _dedupe_fairness_options(df: pd.DataFrame, candidates: list[str]):
+    """Drop fairness metrics that plot an identical distance-from-parity line.
+
+    A two-group SPD is symmetric -- SPD_privileged == -SPD_underrepresented
+    exactly -- so both give the same |distance from parity| and the selector
+    offered two entries that drew the same chart. Computed rather than
+    hard-coded so it stays correct if new group columns are added.
+
+    Note this only holds for the absolute view. The earlier indexed version
+    divided by the baseline gap, which cancelled each group's corpus share and
+    made the SRR variants collapse onto the SPD ones too; those are genuinely
+    distinct here and are kept.
+    """
+    seen: dict[tuple, str] = {}
+    options: list[str] = []
+    aliases: dict[str, list[str]] = {}
+    for metric in candidates:
+        signature = tuple(round(_parity_gap(metric, v), 12) for v in df[metric])
+        if signature in seen:
+            aliases.setdefault(seen[signature], []).append(metric)
+        else:
+            seen[signature] = metric
+            options.append(metric)
+    return options, aliases
 
 
 def _pick_comparison_row(df: pd.DataFrame) -> pd.Series:
@@ -66,39 +94,53 @@ def _indexed_tradeoff(df: pd.DataFrame, fairness_metric: str) -> None:
         )
         return
     base = baseline.iloc[0]
-
     order = list(df["config"])
-    rows = []
-    for col in [c for c in UTILITY_COLS if c in df.columns]:
-        if not base[col]:
-            continue
-        for _, r in df.iterrows():
-            rows.append({"config": r["config"], "series": col,
-                         "pct": r[col] / base[col] * 100, "kind": "utility"})
 
-    base_gap = _parity_gap(fairness_metric, base[fairness_metric])
-    gap_label = f"{fairness_metric} distance from parity"
-    if base_gap:
-        for _, r in df.iterrows():
-            rows.append({"config": r["config"], "series": gap_label,
-                         "pct": _parity_gap(fairness_metric, r[fairness_metric]) / base_gap * 100,
-                         "kind": "fairness"})
+    # Utility is indexed to the baseline: the metrics have different natural
+    # scales (Recall@10 0.90 vs nDCG@10 0.83) and the point is how little each
+    # one moves, which a shared percentage axis shows directly.
+    fig = make_subplots(specs=[[{"secondary_y": True}]])
+    for col in [c for c in UTILITY_COLS if c in df.columns and base[c]]:
+        fig.add_trace(
+            go.Scatter(x=df["config"], y=df[col] / base[col] * 100,
+                       name=col, mode="lines+markers"),
+            secondary_y=False,
+        )
 
-    fig = px.line(
-        pd.DataFrame(rows), x="config", y="pct", color="series",
-        line_dash="kind", markers=True,
-        title="Utility vs. fairness, indexed to the naive baseline (= 100%)",
-        labels={"pct": "% of baseline", "config": ""},
+    # Fairness is NOT indexed. Dividing by the baseline gap is meaningless when
+    # that gap is already ~0: on the institution tier the baseline sits at
+    # parity, so the ratio ran to 2175% and flattened every utility line into
+    # the axis. Absolute distance from parity on its own axis keeps both
+    # readable and keeps "0 = parity" interpretable.
+    fig.add_trace(
+        go.Scatter(x=df["config"],
+                   y=[_parity_gap(fairness_metric, v) for v in df[fairness_metric]],
+                   name=f"|{fairness_metric} − parity|", mode="lines+markers",
+                   line=dict(dash="dash")),
+        secondary_y=True,
     )
+
     fig.update_xaxes(categoryorder="array", categoryarray=order)
-    fig.add_hline(y=100, line_dash="dot", opacity=0.4)
+    fig.update_yaxes(title_text="utility, % of baseline", secondary_y=False)
+    fig.update_yaxes(title_text="distance from parity (0 = parity)",
+                     rangemode="tozero", secondary_y=True)
+    fig.update_layout(
+        title="Utility (left, % of baseline) vs. fairness gap (right, absolute)",
+        legend=dict(orientation="h", yanchor="bottom", y=1.02),
+        margin=dict(t=90),
+    )
+    fig.add_hline(y=100, line_dash="dot", opacity=0.4, secondary_y=False)
     st.plotly_chart(fig, use_container_width=True)
 
+    # The chart above is absolute, so it renders fine at any baseline. The
+    # tiles below are still expressed as a percentage change against the
+    # baseline gap, which is undefined when that gap is exactly zero.
+    base_gap = _parity_gap(fairness_metric, base[fairness_metric])
     if not base_gap:
         st.caption(
             f"{fairness_metric} is already exactly at parity in the baseline, "
-            "so the gap cannot be expressed as a percentage of it; utility is "
-            "still shown."
+            "so the change cannot be expressed as a percentage of it. The chart "
+            "above shows the absolute distance from parity."
         )
         return
 
@@ -191,6 +233,8 @@ def render() -> None:
         if c in df.columns
     ]
 
+    fairness_options, fairness_aliases = _dedupe_fairness_options(df, fairness_options)
+
     # Default to the geo dimension: the institution tier starts near parity, so
     # it is the one dimension where raising lambda_fair over-corrects rather
     # than helps, which makes it a misleading first impression.
@@ -200,8 +244,21 @@ def render() -> None:
         else 0
     )
     fairness_metric = st.selectbox(
-        "Fairness metric", options=fairness_options, index=default_fairness
+        "Fairness metric", options=fairness_options, index=default_fairness,
+        format_func=lambda m: (
+            f"{m}  (identical to {', '.join(fairness_aliases[m])})"
+            if m in fairness_aliases else m
+        ),
     )
+    if fairness_aliases:
+        merged = "; ".join(
+            f"{kept} = {', '.join(dropped)}" for kept, dropped in fairness_aliases.items()
+        )
+        st.caption(
+            f"Some metrics are omitted from this list because they plot the "
+            f"identical line: {merged}. A two-group SPD is symmetric, so both "
+            "groups are the same distance from parity in opposite directions."
+        )
 
     _indexed_tradeoff(df, fairness_metric)
 
