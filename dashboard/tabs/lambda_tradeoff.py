@@ -81,17 +81,22 @@ def _indexed_tradeoff(df: pd.DataFrame, fairness_metric: str) -> None:
     )
 
     parity = PARITY_POINT.get(fairness_metric.split("_")[0], 0.0)
+    # Name the full weight triple, not just lambda_fair. Several configs can
+    # share a lambda_fair value -- a diversity-only and a fairness-only arm at
+    # the same weight would tie, and idxmax picks one of them silently -- so
+    # "fair=0.3" alone would not say which row is on screen.
+    strongest_label = strongest.get("config", f"fair={strongest['lambda_fair']}")
     c1, c2 = st.columns(2)
     c1.metric(
-        f"Distance from parity at fair={strongest['lambda_fair']}",
+        f"Distance from parity ({strongest_label})",
         f"{gap_now:.4f}",
         f"{gap_change:+.0f}% vs baseline",
         delta_color="inverse",
         help=(
-            f"{fairness_metric} moved from {base[fairness_metric]:.4f} to "
-            f"{strongest[fairness_metric]:.4f}; parity for this metric is "
-            f"{parity:.1f}, so the distance from parity went "
-            f"{base_gap:.4f} -> {gap_now:.4f}."
+            f"{fairness_metric} moved from {base[fairness_metric]:.4f} at the "
+            f"baseline to {strongest[fairness_metric]:.4f} at {strongest_label}; "
+            f"parity for this metric is {parity:.1f}, so the distance from "
+            f"parity went {base_gap:.4f} -> {gap_now:.4f}."
         ),
     )
     c2.metric(
@@ -102,13 +107,13 @@ def _indexed_tradeoff(df: pd.DataFrame, fairness_metric: str) -> None:
 
     if gap_change < 0:
         st.success(
-            f"Reranking closes {abs(gap_change):.0f}% of the {fairness_metric} "
-            f"gap for {abs(ndcg_change):.1f}% of nDCG@10, with Recall@10 "
-            "unchanged — fairness here is close to free."
+            f"At {strongest_label}, reranking closes {abs(gap_change):.0f}% of "
+            f"the {fairness_metric} gap for {abs(ndcg_change):.1f}% of nDCG@10, "
+            "with Recall@10 unchanged — fairness here is close to free."
         )
     else:
         st.warning(
-            f"On this dimension the distance from parity **grows** "
+            f"At {strongest_label} the distance from parity **grows** "
             f"{gap_change:+.0f}%. It already starts near parity, so raising the "
             "fairness weight over-corrects and pushes the retrieved mix further "
             "from the corpus distribution. Growing distance from parity means "
