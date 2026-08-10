@@ -360,22 +360,53 @@ for metric, data, ref in [("SPD", spd_geo, 0.0), ("SRR", srr_geo, 1.0)]:
     plt.close(fig)
 
 # 7d. lambda geo tradeoff (Phase 9)
-mmr_only = lambda_df[lambda_df["config_type"] == "mmr"]
-base = lambda_df[lambda_df["config_type"] == "baseline"]
-fig, ax = plt.subplots(figsize=(6, 4))
-ax.scatter(mmr_only["SPD_high_resource"], mmr_only["Recall@10"], c="#2b8cbe", label="MMR configs")
-ax.scatter(base["SPD_high_resource"], base["Recall@10"], c="#d7301f", marker="*", s=180, label="naive baseline")
-for _, r in lambda_df.iterrows():
-    ax.annotate(f"{r['lambda_rel']:.2f}/{r['lambda_fair']:.2f}",
-                (r["SPD_high_resource"], r["Recall@10"]), fontsize=7,
-                textcoords="offset points", xytext=(4, 4))
-ax.set_xlabel("SPD_high_resource")
-ax.set_ylabel("Recall@10 (known-item)")
-ax.set_title("geo fairness vs utility tradeoff")
+#
+# y is nDCG@10, not Recall@10. Recall@10 is a known-item hit rate and is
+# exactly 0.90 for every configuration, so plotting it put all ten points on
+# one horizontal line -- a trade-off figure that could not show a trade-off.
+# nDCG@10 spans 0.8076-0.8319 and is where the reranking cost actually shows.
+#
+# Every config_type gets its own series so the RQ3 isolation arms are visible:
+# diversity-only sits next to the baseline (near-zero fairness movement, no
+# utility cost) while fairness-only carries the SPD shift. Previously only
+# mmr+baseline were scattered while ALL rows were annotated, which left the
+# four isolation arms as floating labels with no marker under them.
+#
+# Colours, markers, figsize and dpi deliberately mirror the equivalent cell in
+# work_notebook.ipynb, which also writes this file -- see the note at the end
+# of this block.
+TRADEOFF_STYLE = {
+    "mmr":            ("#2b8cbe", "o",  80, "joint MMR"),
+    "diversity_only": ("#31a354", "s",  80, "diversity-only"),
+    "fairness_only":  ("#756bb1", "D",  80, "fairness-only"),
+    "baseline":       ("#d7301f", "*", 250, "naive baseline"),
+}
+Y_METRIC = "nDCG@10"
+
+fig, ax = plt.subplots(figsize=(8, 6))
+for cfg_type, (colour, marker, size, label) in TRADEOFF_STYLE.items():
+    subset = lambda_df[lambda_df["config_type"] == cfg_type]
+    if subset.empty:
+        continue
+    ax.scatter(subset["SPD_high_resource"], subset[Y_METRIC],
+               c=colour, marker=marker, s=size, label=label, zorder=3)
+    for _, r in subset.iterrows():
+        ax.annotate(f"{r['lambda_rel']:.2f}/{r['lambda_div']:.2f}/{r['lambda_fair']:.2f}",
+                    (r["SPD_high_resource"], r[Y_METRIC]), fontsize=7,
+                    textcoords="offset points", xytext=(5, 5))
+ax.set_xlabel("SPD (high_resource), 0 = parity with corpus")
+ax.set_ylabel(f"{Y_METRIC} (known-item)")
+ax.set_title("geo_group Fairness-Utility Tradeoff")
+ax.grid(True)
 ax.legend()
-fig.tight_layout()
-fig.savefig(os.path.join(FIG, "SPD_geo_fairness_utility_tradeoff.png"))
+fig.savefig(os.path.join(FIG, "SPD_geo_fairness_utility_tradeoff.png"),
+            dpi=300, bbox_inches="tight")
 plt.close(fig)
+#
+# NOTE: work_notebook.ipynb writes this same filename from its own cell, at the
+# same dpi/figsize but still plotting Recall@10 on y. Whichever ran last wins.
+# If you re-run the notebook, apply the same y-metric change there or this fix
+# will be silently reverted.
 
 # 7e. citation rate per dimension (Phase 10, rendered as the rate ratio so the
 # "cited in proportion to availability" line sits at a fixed 1.0 everywhere)
