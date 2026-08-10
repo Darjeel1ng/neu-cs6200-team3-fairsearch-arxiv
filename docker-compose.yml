@@ -8,6 +8,11 @@ services:
       - "8501:8501"
     volumes:
       - ./data:/app/data:ro
+      # The image bakes the app in via `COPY dashboard` at build time, so
+      # without this every UI edit needs a full rebuild to show up. Mounting
+      # the source over it lets Streamlit's file watcher hot-reload on save.
+      # Dependency or Dockerfile changes still require `--build`.
+      - ./dashboard:/app/dashboard:ro
     environment:
       DASHBOARD_DATA_ROOT: /app/data
 
@@ -23,5 +28,6 @@ services:
       - "8501:8501"
     volumes:
       - ./data:/app/data:ro
+      - ./dashboard:/app/dashboard:ro
     environment:
       DASHBOARD_DATA_ROOT: /app/data
