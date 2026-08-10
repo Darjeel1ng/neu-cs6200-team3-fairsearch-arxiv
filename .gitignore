@@ -17,3 +17,10 @@ data/final_50k_labeled_enriched.parquet
 data/openalex_gate_cache.json.*
 data/openalex_gate_cache.salvaged.json
 data/_*.txt
+
+# All corpus parquets -- large, regenerable, and not meant to be shared.
+# NOTE: deliberately NOT ignoring all of data/ -- the JSON reports and figures
+# under data/update2_output/ are tracked on purpose so the dashboard works
+# without re-running the pipeline. A bare `data/` rule would silently drop new
+# artifacts from commits.
+data/*.parquet
