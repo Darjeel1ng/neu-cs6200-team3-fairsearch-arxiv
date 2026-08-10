@@ -70,7 +70,7 @@ Update2_output folder:
 - Phase 6: `phase6_sample_retrieval.json`, `phase6_retrieval_pipeline_config.json`
 - Phase 7: `queries.json`, `query_benchmark_report.json`
 - Phase 8: `naive_retrieval_results.json`, `retrieval_parity_report.json` (institution + geo dimensions), `embedding_pca_report.json` (embedding-geometry diagnostic) and figures
-- Phase 9: `mmr_reranked_results.json`, `lambda_ablation.csv` (Recall@10 known-item + geo SPD/SRR + naive baseline row) and figures
+- Phase 9: `mmr_reranked_results.json`, `lambda_ablation.csv` (Recall@10 known-item + geo SPD/SRR + naive baseline + joint / diversity-only / fairness-only rows) and figures; re-run with `python run_phase9_ablation.py`
 - Phase 10: `synthesis_eval_report.json` (RAGAS scores, stance mix, citation rate by privilege/geo/region + prompt-variant significance tests), `ragas_scores.csv`, `synthesis_outputs.json` / `stance_outputs.json` (raw LLM outputs, also the resume checkpoints) and figures
 - Phase 11: Streamlit dashboard under `dashboard/` (Query Explorer, Fairness Metrics with dimension switch, Lambda Tradeoff, Synthesis Faithfulness)
 
@@ -231,13 +231,14 @@ goal, expected inputs, and expected outputs.
 
 ### Phase 9 - Fairness-aware MMR re-ranking + lambda ablation (RQ3)
 - **Goal:** Mitigate institutional over/under-representation and quantify the
-  fairness-utility tradeoff.
+  fairness-utility tradeoff; isolate diversity vs fairness mechanisms.
 - **Tasks:** Implement a three-signal MMR re-ranker (relevance / diversity /
-  fairness), sweep lambda configs, re-rank top-20 to top-10, measure nDCG@10 /
-  P@10 / MRR plus unique institutions/countries and SPD/SRR.
-- **In:** Phase 8 retrieval results, `fairness_baseline_priors.json`.
+  fairness), sweep joint + diversity-only + fairness-only lambda configs,
+  re-rank top-20 to top-10, measure nDCG@10 / Recall@10 / MRR plus unique
+  institutions/countries and SPD/SRR.
 - **In:** Phase 8 retrieval results `naive_retrieval_results.json`, `fairness_baseline_priors.json`.
 - **Out:** `mmr_reranked_results.json`, `lambda_ablation.csv`, tradeoff figures.
+- **Re-run:** `python run_phase9_ablation.py` (uses `chroma_db`, no API calls).
 
 ### Phase 10 - Experiment B: generative faithfulness + synthesis bias (RQ2)
 - **Goal:** Assess whether LLM synthesis faithfully represents retrieved
@@ -360,6 +361,10 @@ doc (IDCG = 1).
   -0.14 (institution objective) **and** shrinks `SPD_high_resource` from 0.035
   to 0.014 — the institution-targeted MMR also mitigates the geo dimension,
   because non-Top50 and emerging-economy documents overlap.
+- **Mechanism isolation:** diversity-only (`λ_fair=0`) leaves
+  `SPD_privileged` ≈ baseline (-0.008); fairness-only (`λ_div=0`) reproduces
+  the joint SPD shift. RQ3 fairness effects are attributable to the fairness
+  term, not diversity.
 - The **naive baseline** (rel=1.0, no re-ranking) is included as a reference
   row in `lambda_ablation.csv` and highlighted in the dashboard.
 

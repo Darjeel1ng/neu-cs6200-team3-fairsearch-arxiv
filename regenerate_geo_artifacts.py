@@ -194,13 +194,26 @@ def _summarize(config_label, per_config_df, lam=(None, None, None), config_type=
 with open(os.path.join(U2, "mmr_reranked_results.json"), encoding="utf-8") as f:
     mmr = json.load(f)
 
+def _config_type(lam):
+    _, lam_div, lam_fair = lam
+    if lam_fair == 0.0 and lam_div > 0.0:
+        return "diversity_only"
+    if lam_div == 0.0 and lam_fair > 0.0:
+        return "fairness_only"
+    return "mmr"
+
+
 rows = []
 # naive baseline = pure relevance top-10 (rel=1.0)
 rows.append(_summarize("naive", naive, lam=(1.0, 0.0, 0.0), config_type="baseline"))
 for key, records in mmr.items():
     parts = key.split("_")  # rel_0.80_div_0.10_fair_0.10
     lam = (float(parts[1]), float(parts[3]), float(parts[5]))
-    rows.append(_summarize(key, pd.DataFrame(records), lam=lam, config_type="mmr"))
+    rows.append(
+        _summarize(
+            key, pd.DataFrame(records), lam=lam, config_type=_config_type(lam)
+        )
+    )
 
 lambda_df = pd.DataFrame(rows)
 lambda_df.to_csv(os.path.join(U2, "lambda_ablation.csv"), index=False)

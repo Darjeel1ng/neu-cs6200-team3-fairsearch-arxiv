@@ -126,8 +126,9 @@ def render() -> None:
     st.caption(
         "Phase 9 lambda ablation: relevance/diversity/fairness weighting vs. "
         "utility (Recall@10 known-item, nDCG@10, MRR) and fairness (SPD/SRR "
-        "on institution tier and geo group). The naive baseline (no MMR) is "
-        "shown as a reference point."
+        "on institution tier and geo group). Includes joint MMR plus "
+        "diversity-only and fairness-only configs for RQ3 mechanism isolation; "
+        "the naive baseline (no MMR) is shown as a reference point."
     )
 
     df = data_loader.get_lambda_ablation()

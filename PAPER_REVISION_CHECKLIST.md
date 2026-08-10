@@ -146,14 +146,26 @@ embedding geometry.
 Utility is flat everywhere: Recall@10 = 0.90 and nDCG@10 ≈ 0.83 across all
 configurations including the baseline. Only fairness moves:
 
-| λ_rel / λ_div / λ_fair | SPD_privileged | SPD_high_resource |
-|---|---|---|
-| 1.0 / 0.0 / 0.0 (baseline) | -0.006 | +0.040 |
-| 0.8 / 0.1 / 0.1 | -0.049 | +0.035 |
-| 0.6 / 0.2 / 0.2 | -0.096 | +0.021 |
-| 0.4 / 0.3 / 0.3 | -0.139 | +0.015 |
+| λ_rel / λ_div / λ_fair | type | SPD_privileged | SPD_high_resource |
+|---|---|---|---|
+| 1.0 / 0.0 / 0.0 | baseline | -0.006 | +0.040 |
+| 0.8 / 0.1 / 0.1 | joint | -0.049 | +0.035 |
+| 0.6 / 0.2 / 0.2 | joint | -0.096 | +0.021 |
+| 0.4 / 0.3 / 0.3 | joint | -0.139 | +0.015 |
+| 0.9 / 0.1 / 0.0 | diversity-only | -0.008 | +0.043 |
+| 0.7 / 0.3 / 0.0 | diversity-only | -0.008 | +0.041 |
+| 0.9 / 0.0 / 0.1 | fairness-only | -0.046 | +0.036 |
+| 0.7 / 0.0 / 0.3 | fairness-only | -0.105 | +0.017 |
 
-Two points worth making: because the institution dimension starts near parity,
+**RQ3 mechanism isolation (added to answer the professor's confound):**
+diversity-only leaves `SPD_privileged` near the baseline (~-0.008), while
+fairness-only at comparable `λ_fair` reproduces the joint SPD shift
+(-0.046 / -0.105). So the fairness movement in the joint sweep is attributable
+to the fairness term, not diversity. Re-run offline with
+`python run_phase9_ablation.py` (no API calls); full table in
+`lambda_ablation.csv`.
+
+Two further points: because the institution dimension starts near parity,
 raising λ_fair **over-corrects** it (privileged papers end up under-represented
 at -0.14); and the same institution-targeted objective **also** shrinks the geo
 gap (+0.040 → +0.015), because non-Top50 and emerging-economy documents overlap
