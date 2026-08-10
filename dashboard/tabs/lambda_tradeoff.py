@@ -19,6 +19,36 @@ def _parity_gap(metric: str, value: float) -> float:
     return abs(value - PARITY_POINT.get(metric.split("_")[0], 0.0))
 
 
+def _pick_comparison_row(df: pd.DataFrame) -> pd.Series:
+    """Which config the summary tiles compare against the baseline.
+
+    This used to be `idxmax(lambda_fair)`, which was unique only while the
+    sweep varied diversity and fairness together. With the RQ3 isolation arms
+    added, a fairness-only config ties the joint config at lambda_fair=0.3 and
+    idxmax silently returned whichever came first -- headlining the joint
+    config, the one whose effect is *not* attributable to a single mechanism.
+    Let the reader choose instead, defaulting to the strongest fairness-only
+    arm when one exists, since that is the attributable result.
+    """
+    candidates = df[df["config_type"] != "baseline"]
+    if candidates.empty:
+        candidates = df
+
+    isolated = candidates[candidates["config_type"] == "fairness_only"]
+    preferred = (isolated if not isolated.empty else candidates)
+    default = preferred.loc[preferred["lambda_fair"].idxmax(), "config"]
+
+    options = list(candidates["config"])
+    choice = st.selectbox(
+        "Compare against baseline", options=options,
+        index=options.index(default),
+        help="Configs sharing a lambda_fair value are distinguished by their "
+             "full weight triple; the default is the strongest fairness-only "
+             "arm, whose effect is attributable to the fairness term alone.",
+    )
+    return candidates[candidates["config"] == choice].iloc[0]
+
+
 def _indexed_tradeoff(df: pd.DataFrame, fairness_metric: str) -> None:
     """Utility and fairness on one axis, each as a percentage of the baseline.
 
@@ -72,7 +102,7 @@ def _indexed_tradeoff(df: pd.DataFrame, fairness_metric: str) -> None:
         )
         return
 
-    strongest = df.loc[df["lambda_fair"].idxmax()]
+    strongest = _pick_comparison_row(df)
     gap_now = _parity_gap(fairness_metric, strongest[fairness_metric])
     gap_change = (gap_now - base_gap) / base_gap * 100
     ndcg_change = (
