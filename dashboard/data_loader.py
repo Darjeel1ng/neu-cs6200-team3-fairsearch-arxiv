@@ -53,6 +53,17 @@ def load_fairness_baseline_priors(_mtime_key: float) -> dict:
         return json.load(f)
 
 
+@st.cache_data
+def load_synthesis_report(_mtime_key: float) -> dict:
+    with open(os.path.join(UPDATE2_DIR, "synthesis_eval_report.json")) as f:
+        return json.load(f)
+
+
+@st.cache_data
+def load_ragas_scores(_mtime_key: float) -> pd.DataFrame:
+    return pd.read_csv(os.path.join(UPDATE2_DIR, "ragas_scores.csv"))
+
+
 def get_queries() -> list[dict]:
     return load_queries(_mtime(os.path.join(UPDATE2_DIR, "queries.json")))
 
@@ -80,6 +91,20 @@ def get_retrieval_parity_report() -> dict:
 def get_fairness_baseline_priors() -> dict:
     path = os.path.join(DATA_ROOT, "fairness_baseline_priors.json")
     return load_fairness_baseline_priors(_mtime(path))
+
+
+def get_synthesis_report() -> dict:
+    path = os.path.join(UPDATE2_DIR, "synthesis_eval_report.json")
+    return load_synthesis_report(_mtime(path))
+
+
+def get_ragas_scores() -> pd.DataFrame:
+    path = os.path.join(UPDATE2_DIR, "ragas_scores.csv")
+    return load_ragas_scores(_mtime(path))
+
+
+def synthesis_report_exists() -> bool:
+    return os.path.exists(os.path.join(UPDATE2_DIR, "synthesis_eval_report.json"))
 
 
 def data_root_exists() -> bool:

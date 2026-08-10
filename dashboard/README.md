@@ -46,7 +46,7 @@ From the **repo root**:
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
-pip install -r requirements.txt
+pip install -r requirements-dashboard.txt
 
 DASHBOARD_DATA_ROOT="$PWD/data" PYTHONPATH="$PWD" streamlit run dashboard/app.py
 ```
@@ -64,8 +64,8 @@ For live querying, also `pip install -r requirements-live.txt` first.
 | `live_retrieval.py` | Optional live query against `chroma_db`; no-ops if unavailable |
 | `tabs/query_explorer.py` | Naive vs. all 5 MMR lambda configs, side by side, for a selected query |
 | `tabs/fairness_metrics.py` | SPD / SRR, baseline vs. observed distributions |
-| `tabs/lambda_tradeoff.py` | Phase 9 lambda ablation: utility vs. fairness tradeoff |
-| `tabs/synthesis_placeholder.py` | Placeholder for Phase 10 metrics (not yet implemented) |
+| `tabs/lambda_tradeoff.py` | Phase 9 lambda ablation: utility vs. fairness tradeoff (+ naive baseline) |
+| `tabs/synthesis.py` | Phase 10 RAGAS scores (faithfulness / answer relevancy / context precision), stance mix, citation bias by privilege / geo group / region |
 
 ## Troubleshooting
 
@@ -79,3 +79,7 @@ For live querying, also `pip install -r requirements-live.txt` first.
   (unlike data changes, changes to the `Dockerfile`/`requirements*.txt`
   *do* require a rebuild). If running without Docker, make sure
   `PYTHONPATH` is set to the repo root as shown above, not `dashboard/`.
+
+Dashboard deps live in `requirements-dashboard.txt` (root). Notebook deps are
+in `notebook-requirements.txt`; optional live-retrieval deps in
+`requirements-live.txt`.

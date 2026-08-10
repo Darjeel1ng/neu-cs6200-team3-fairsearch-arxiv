@@ -1,7 +1,7 @@
 {
-  "generated_at_utc": "2026-06-12T08:25:40.182768+00:00",
+  "generated_at_utc": "2026-07-31T05:47:11.185364+00:00",
   "input_path": "data\\final_50k_cleaned.parquet",
-  "qs_top50_path": "c:\\Users\\Darjeel1ng\\OneDrive - Northeastern University\\Attachments\\cs 6200\\project\\qs-top50-cs-universities.txt",
+  "qs_top50_path": "C:\\Users\\Darjeel1ng\\OneDrive - Northeastern University\\Attachments\\cs 6200\\project\\qs-top50-cs-universities.txt",
   "output_path": "data\\final_50k_labeled.parquet",
   "row_count": 50000,
   "optional_columns_kept": [

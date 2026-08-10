@@ -1,0 +1,41 @@
+{
+  "sample_size": 12000,
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "pc1_explained_variance": 0.0696,
+  "pc2_explained_variance": 0.0405,
+  "dimensions": {
+    "privilege_label": {
+      "groups": [
+        "underrepresented",
+        "privileged"
+      ],
+      "group_sizes": {
+        "underrepresented": 9938,
+        "privileged": 2062
+      },
+      "linear_probe_roc_auc_mean": 0.641,
+      "linear_probe_roc_auc_std": 0.0092,
+      "silhouette_cosine": -0.0021,
+      "between_centroid_distance": 0.0623,
+      "mean_within_group_spread": 0.9382,
+      "centroid_separation_ratio": 0.0664
+    },
+    "geo_group": {
+      "groups": [
+        "high_resource",
+        "emerging"
+      ],
+      "group_sizes": {
+        "high_resource": 9744,
+        "emerging": 2215
+      },
+      "linear_probe_roc_auc_mean": 0.7217,
+      "linear_probe_roc_auc_std": 0.0076,
+      "silhouette_cosine": -0.0004,
+      "between_centroid_distance": 0.1045,
+      "mean_within_group_spread": 0.9363,
+      "centroid_separation_ratio": 0.1116
+    }
+  },
+  "interpretation_note": "silhouette ~ 0 and a between-centroid distance that is a small fraction of the within-group spread mean the groups are intermixed rather than occupying separate regions. A linear probe above chance reflects topical differences between groups, not a separable region, so the Phase 8 retrieval skew is attributable to corpus volume imbalance rather than embedding geometry."
+}

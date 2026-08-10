@@ -1,12 +1,32 @@
 # neu-cs6200-team3-fairsearch-arxiv
 
-Working notes for the FairSearch-arXiv project. **Phases 10 and 11 are still working on**, Everything below is a quick reference, not a formal report.
+Working notes for the FairSearch-arXiv project. **Phases 1-11 are complete**
+(Phase 10 synthesis audit + Phase 11 Streamlit dashboard included). Everything
+below is a quick reference, not a formal report.
+
+### Dual-label fairness scheme
+
+The audit runs on **two independent group dimensions** (see
+`data/fairness_labeling_rules.md`):
+
+- `privilege_label` — QS Top-50 CS **institution tier** (privileged /
+  underrepresented / unknown). Near corpus-balanced under retrieval
+  (`SPD_privileged ~ -0.006`), which is itself a reportable finding.
+- `geo_group` — World Bank **income proxy** on `country_code`
+  (high_resource / emerging / unknown). This is the data-supported bias
+  dimension: high_resource is mildly over-retrieved (`SPD +0.026`).
+
+The mapping is defined once in `geo_labels.py` and imported by both the
+notebook and `regenerate_geo_artifacts.py` (the offline "re-join labels by
+`document_id`" utility that refreshes the geo artifacts without re-ingesting
+ChromaDB or calling any LLM).
 
 ---
 
 ## TL;DR for whoever picks this up
 
-- All code lives in `work_notebook.ipynb`, organized as Phase 1 -> Phase 5.
+- All notebook code lives in `work_notebook.ipynb`, organized as Phase 1 ->
+  Phase 10; Phase 11 is the Streamlit app under `dashboard/`.
 - Phases 1-5 have already been run; the resulting corpus + reports are in `data/`.
 - The single most important file is **`data/final_50k_labeled.parquet`** - the
   final 50K corpus with cleaned text + institution + region + fairness labels.
@@ -36,17 +56,17 @@ pointer stubs instead of real data.
 ### Committed - small reports / stats / figures (plain git)
 - Phase 1: `raw_data_profile.json`, `corpus_selection_report.json`, `openalex_gate_report.json`
 - Phase 2: `text_cleaning_report.json`
-- Phase 3: `affiliation_match_report.json`, `institution_alias_map.csv`, `label_distribution.csv`
-- Phase 4: `final_corpus_statistics.csv`, `fairness_baseline_priors.json`, `corpus_summary.md`, `figures/*.png`
+- Phase 3: `affiliation_match_report.json`, `institution_alias_map.csv`, `label_distribution.csv` (privilege), `geo_label_distribution.csv` (geo_group), `fairness_labeling_rules.md`
+- Phase 4: `final_corpus_statistics.csv`, `fairness_baseline_priors.json` (incl. `geo_group_prior`), `corpus_summary.md`, `figures/*.png` (incl. `geo_group.png`)
 - Phase 5: `chroma_db/`, `chroma_ingestion_report.json`, `sample_retrieval_results.md`, `index_config.yaml`
 
 Update2_output folder:
 - Phase 6: `phase6_sample_retrieval.json`, `phase6_retrieval_pipeline_config.json`
 - Phase 7: `queries.json`, `query_benchmark_report.json`
-- Phase 8: `naive_retrieval_results.json`, `retrieval_parity_report.json` and figures
-- Phase 9: `mmr_reranked_results.json`, `lambda_ablation.csv` and figures
-- Phase 10: 
-- Phase 11: Development of a Streamlit-based diagnostic interface, this is for update3
+- Phase 8: `naive_retrieval_results.json`, `retrieval_parity_report.json` (institution + geo dimensions), `embedding_pca_report.json` (embedding-geometry diagnostic) and figures
+- Phase 9: `mmr_reranked_results.json`, `lambda_ablation.csv` (Recall@10 known-item + geo SPD/SRR + naive baseline row) and figures
+- Phase 10: `synthesis_eval_report.json` (RAGAS scores, stance mix, citation rate by privilege/geo/region + prompt-variant significance tests), `ragas_scores.csv`, `synthesis_outputs.json` / `stance_outputs.json` (raw LLM outputs, also the resume checkpoints) and figures
+- Phase 11: Streamlit dashboard under `dashboard/` (Query Explorer, Fairness Metrics with dimension switch, Lambda Tradeoff, Synthesis Faithfulness)
 
 These let you sanity-check each phase without opening the parquet files.
 
@@ -71,6 +91,13 @@ The notebook caches aggressively, so re-running is cheap:
   canonicalizes against the local QS Top-50 list).
 - **Re-run phase 5 from scratch** `final_50k_labeled.parquet` is the only file needed in this phase, just run the cell one by one in order.(This is the phase building chroma_db)
 - **Re-run phase 6-10 from scratch** `final_50k_labeled.parquet` is the only file needed in phase 6, for all the cells in phase 6 and the other phase 7 - 10 just run the cell one by one in order.
+- **Re-run Phase 10 only:** needs `DEEPSEEK_API_KEY` in the kernel environment
+  (the cell falls back to a hidden `getpass` prompt if it isn't there). The
+  phase checkpoints itself: generation resumes from `synthesis_outputs.json` /
+  `stance_outputs.json`, and RAGAS reuses rows in `ragas_scores.csv` whose
+  response hash still matches, so a re-run after a partial failure only pays
+  for what's actually missing. A full cold run is ~45 min (450 generation calls
+  + 900 judge calls).
 
 
 Note: Phase 1 reads an `openalex api.txt` config (mailto / polite-pool email)
@@ -174,8 +201,7 @@ goal, expected inputs, and expected outputs.
   embedding model consistent with the index, expose a baseline top-k retriever
   with over-fetch headroom (e.g. fetch 20, re-rank to 10).
 - **In:** `chroma_db/`, `index_config.yaml`.
-- **Out:** retrieval pipeline config + sample retrieval output.
-- **Out:** retrieval pipeline config `phase6_sample_retrieval.json` + sample retrieval output `phase6_retrieval_pipeline_config.json`.
+- **Out:** retrieval pipeline config `phase6_retrieval_pipeline_config.json` + sample retrieval output `phase6_sample_retrieval.json`.
 
 ### Phase 7 - Bias-audit query benchmark
 - **Goal:** Build the 150-query evaluation set.
@@ -189,10 +215,13 @@ goal, expected inputs, and expected outputs.
 ### Phase 8 - Experiment A: retrieval parity audit (RQ1)
 - **Goal:** Measure institutional homophily in baseline retrieval.
 - **Tasks:** Run top-k retrieval over the 150 queries, tag results with
-  privilege/region metadata, compute SPD and SRR against the Phase 4 priors,
-  break down by query category.
-- **In:** `queries.json`, retrieval pipeline, `fairness_baseline_priors.json`.
-- **Out:** `naive_retrieval_results.json`, `retrieval_parity_report.json`, figures.
+  privilege/geo/region metadata, compute SPD and SRR against the Phase 4
+  priors, break down by query category, and diagnose whether any observed skew
+  comes from embedding geometry (PCA + linear probe over the Phase 5 vectors).
+- **In:** `queries.json`, retrieval pipeline, `fairness_baseline_priors.json`,
+  `chroma_db/`.
+- **Out:** `naive_retrieval_results.json`, `retrieval_parity_report.json`,
+  `embedding_pca_report.json`, figures.
 
 ### Phase 9 - Fairness-aware MMR re-ranking + lambda ablation (RQ3)
 - **Goal:** Mitigate institutional over/under-representation and quantify the
@@ -208,22 +237,27 @@ goal, expected inputs, and expected outputs.
 - **Goal:** Assess whether LLM synthesis faithfully represents retrieved
   viewpoints and whether it amplifies institutional bias.
 - **Tasks:** Generate summaries with citations, stance-classify retrieved docs
-  (pro-consensus / dissenting / neutral), evaluate faithfulness (LLM-as-judge /
-  RAGAS), compare standard vs. perspective-balanced prompting, report citation
-  rate by privilege/region.
+  (pro-consensus / dissenting / neutral), evaluate with RAGAS (faithfulness,
+  answer relevancy, context precision), compare standard vs.
+  perspective-balanced prompting, report citation rate by
+  privilege/geo_group/region with a significance test on the prompt shift.
+- **Models:** generator, stance classifier and RAGAS judge are all
+  `deepseek-v4-flash` over DeepSeek's OpenAI-compatible API. Needs
+  `DEEPSEEK_API_KEY`.
 - **In:** Phase 8/9 results, `queries.json`.
-- **Out:** `synthesis_eval_report.json`, `ragas_scores.csv`, figures.
+- **Out:** `synthesis_eval_report.json`, `ragas_scores.csv`,
+  `synthesis_outputs.json`, `stance_outputs.json`, figures.
 
 ### Phase 11 - Interactive fairness dashboard
 - **Goal:** Expose retrieval and fairness metrics interactively.
 - **Tasks:** Build a Streamlit app to issue queries, show retrieved docs with
   institution/geo metadata, and visualize SPD / SRR / diversity live.
 - **In:** retrieval pipeline + result artifacts.
-- **Out:** dashboard app + screenshots.
+- **Out:** dashboard app (`dashboard/`) + screenshots (`dashboard/screenshots/*.png`).
 
 ---
 
-## Update 2: Results (Phase 6-9), based on 150-query evaluation set:
+## Update 2: Results (Phase 6-10), based on 150-query evaluation set:
 
 **Fairness labels (`privilege_label`)**
 - **Baseline**
@@ -242,7 +276,7 @@ goal, expected inputs, and expected outputs.
   South America 1.5% | Africa 0.5% | Unknown 0.3%
 
 **Observed: Region distribution**
-- **Europe 46.2%** | North America 26.3% | **Asia 22.3%** | Oceania 2.8% |
+- **Europe 46.3%** | North America 26.2% | **Asia 22.3%** | Oceania 2.8% |
   South America 1.3% | Africa 0.5% | Unknown 0.5%
 
 **SPD:**
@@ -250,12 +284,12 @@ goal, expected inputs, and expected outputs.
   - Underrepresented: 0.00606,
   - Privileged": -0.00606,
 - Region
-  - Europe: 0.031773, ( 0.03 indicates mild overrepresentation relative to the corpus)
-  - North America: -0.006807,
-  - Asia: -0.02966, ( -0.03 indicates mild underrepresentation relative to the corpus)
+  - Europe: 0.03244, ( 0.03 indicates mild overrepresentation relative to the corpus)
+  - North America: -0.007807,
+  - Asia: -0.029327, ( -0.03 indicates mild underrepresentation relative to the corpus)
   - Oceania: 0.00494,
   - South America: -0.001567,
-  - Africa: -0.0024,
+  - Africa: -0.00024,
   - Unknown: 0.00156
 
 **SRR:**
@@ -263,12 +297,112 @@ goal, expected inputs, and expected outputs.
   - Underrepresented: 1.007311,
   - Privileged": 0.964574,
 - Region
-  - Europe: 1.073795, ( 1.07 > 1 indicates mild overrepresentation relative to the corpus)
-  - North America: 0.974802,
-  - Asia: 0.882609, ( 0.88 < 1 indicates mild underrepresentation relative to the corpus)
+  - Europe: 1.075344, ( 1.07 > 1 indicates mild overrepresentation relative to the corpus)
+  - North America: 0.9711,
+  - Asia: 0.883927, ( 0.88 < 1 indicates mild underrepresentation relative to the corpus)
   - Oceania: 1.214224, ( 1.2 > 1 indicates mild overrepresentation relative to the corpus)
   - South America: 0.894832,
   - Africa: 0.954198,
   - Unknown: 1.453488
 
+### geo_group dimension (World Bank income proxy) — the data-supported bias
+
+**Baseline (corpus):** high_resource 81.1% | emerging 18.6% | unknown 0.3%
+**Observed (retrieved):** high_resource 83.7% | emerging 16.0% | unknown 0.3%
+
+- **SPD:** high_resource **+0.0264**, emerging **-0.0267** — high-income
+  countries are mildly over-retrieved, emerging economies mildly
+  under-retrieved (SRR 1.032 vs **0.857**). This is the cleaner bias signal
+  (Country Gini 0.865 > Institution Gini 0.752), and it complements the
+  near-balanced institution tier rather than replacing it.
+
+### Where the skew comes from: embedding geometry vs. corpus volume
+
+PCA + a linear probe on 12,000 documents' vectors pulled straight from the
+Phase 5 Chroma index (`embedding_pca_report.json`,
+`figures/embedding_pca_*.png`). PC1/PC2 explain only 7.0% / 4.1% of variance,
+so the scatter is a projection, not the whole story — the probe and silhouette
+run on all 384 dimensions.
+
+| dimension | linear-probe ROC-AUC | silhouette (cosine) | centroid distance / within-group spread |
+|---|---|---|---|
+| `privilege_label` | 0.641 | -0.002 | 0.066 |
+| `geo_group` | 0.722 | -0.000 | 0.112 |
+
+Silhouette ~0 and a between-centroid distance that is only 7-11% of the
+within-group spread mean the groups are **thoroughly intermixed**, not sitting
+in separate regions the retriever could systematically skip. The above-chance
+probe AUC (especially 0.72 for geo) says group membership is *somewhat*
+predictable from topic — emerging-economy work skews toward different
+subfields — but that topical signal is far too weak to explain the parity gap
+geometrically. The gap tracks corpus volume instead: `emerging` is 18.6% of the
+corpus and 15.9% of retrieved documents.
+
+### Phase 9 — MMR re-ranking + lambda ablation (RQ3)
+
+Metric口径 fix: the old `P@10` was a single-relevant-document artifact
+(max 0.1, hence the flat 0.06). It is now reported honestly as
+**Recall@10 (HitRate@10)**, a **known-item** metric over the 100 neutral
+queries that carry a ground-truth document (the 50 debate queries have none).
+Fairness metrics still use all 150 queries. `nDCG@10` uses a single relevant
+doc (IDCG = 1).
+
+- Recall@10 ≈ **0.90** and nDCG@10 ≈ **0.83** across all configs — MMR
+  re-ranking top-20→top-10 rarely drops the known item, so utility is
+  essentially flat while fairness weight increases.
+- Raising `λ_fair` from 0.10 to 0.30 pushes `SPD_privileged` from -0.05 to
+  -0.14 (institution objective) **and** shrinks `SPD_high_resource` from 0.035
+  to 0.014 — the institution-targeted MMR also mitigates the geo dimension,
+  because non-Top50 and emerging-economy documents overlap.
+- The **naive baseline** (rel=1.0, no re-ranking) is included as a reference
+  row in `lambda_ablation.csv` and highlighted in the dashboard.
+
+### Phase 10 — synthesis faithfulness + citation bias (RQ2)
+
+**Full 150-query benchmark** (no subsampling), standard vs. perspective-balanced
+prompting. Generator, stance classifier and RAGAS judge are all
+`deepseek-v4-flash`. All 150 queries produced a usable synthesis under both
+prompts — **zero refusals**, and 300/300 rows scored on all three RAGAS metrics.
+
+| RAGAS metric (mean) | standard | balanced |
+|---|---|---|
+| faithfulness | **0.924** | 0.907 |
+| answer relevancy | 0.674 | 0.667 |
+| context precision | 0.803 | 0.796 |
+
+- **The perspective-balanced prompt changes how much is cited, not who gets
+  cited.** It roughly doubles citation breadth — 7.66 citations over 7.17
+  distinct documents per query vs. 4.50 over 3.60 for the standard prompt —
+  while every group's *share* of citations moves by less than 3 points.
+- **No citation-composition bias survives a significance test.** Standard vs.
+  balanced share shifts are non-significant on every group in all three
+  dimensions (privileged p=0.80, emerging p=0.19, high_resource p=0.22; see
+  `variant_shift_tests`). Citation rates sit near parity throughout:
+  privileged 1.05× (standard) / 1.08× (balanced), emerging 0.92× / 1.07×.
+- Stance mix of retrieved docs: neutral 67.2% / pro-consensus 28.9% /
+  dissenting **3.9%** — the retrieved pool is overwhelmingly non-committal, so
+  there is little dissent for synthesis to suppress in the first place.
+- 5 citations (of 1,811) pointed at a `doc_N` label outside the provided
+  context and were dropped.
+
+**Comparability caveat.** These numbers replace an earlier 40-query
+Claude-Opus-generated / Claude-judged run and are **not** comparable with it.
+RAGAS scores are judge-dependent, refusal behaviour is model-specific (Claude
+declined 6 debate queries; DeepSeek declined none), and the sample grew from 40
+to 150. In particular the earlier run's headline claim — that balanced
+prompting cuts privilege over-citation from 1.25× to 1.09× — **does not
+replicate here**: at 150 queries the privileged citation rate is ~1.05-1.08×
+under both prompts and the difference is noise.
+
 (See `data/update2_output` folders for all the outputs and figures.)
+
+---
+
+## Updating the final report
+
+The report's editable source isn't in this repo (the parent folder only has
+PDFs), so [`PAPER_REVISION_CHECKLIST.md`](PAPER_REVISION_CHECKLIST.md) is the
+bridge: an index of which artifact holds which number, the fixes the current
+draft needs ordered by urgency, the authoritative values to substitute, claims
+that no longer replicate, and the new limitations. Take that file to whatever
+platform the paper lives on.
