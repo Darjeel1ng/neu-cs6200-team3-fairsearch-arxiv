@@ -4,6 +4,12 @@ Working notes for the FairSearch-arXiv project. **Phases 1-11 are complete**
 (Phase 10 synthesis audit + Phase 11 Streamlit dashboard included). Everything
 below is a quick reference, not a formal report.
 
+> **Running the dashboard?** Setup and run instructions — both with Docker and
+> without — live in **[`dashboard/README.md`](dashboard/README.md)**, along with
+> the optional live free-text query mode and troubleshooting. The app reads the
+> committed result artifacts in `data/`, so you do not need to re-run the
+> pipeline or supply an API key to use it.
+
 ### Dual-label fairness scheme
 
 The audit runs on **two independent group dimensions** (see
