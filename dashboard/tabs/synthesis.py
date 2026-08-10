@@ -138,7 +138,7 @@ def _citation_volume(volume_by_variant: dict):
 
 
 def render() -> None:
-    st.header("Synthesis Faithfulness (Phase 10)")
+    st.header("Synthesis Faithfulness")
 
     if not data_loader.synthesis_report_exists():
         st.info("synthesis_eval_report.json not found yet — run Phase 10.")
