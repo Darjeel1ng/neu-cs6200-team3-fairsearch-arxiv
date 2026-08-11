@@ -127,5 +127,6 @@ def render() -> None:
         category_df = pd.DataFrame(rows).sort_values("category")
         st.dataframe(category_df, use_container_width=True, hide_index=True)
 
-    with st.expander("Corpus-level fairness priors (Phase 4)"):
-        st.json(data_loader.get_fairness_baseline_priors())
+    # The raw Phase 4 priors JSON used to be dumped in an expander here. The
+    # same numbers are already on screen as the "baseline" series of the
+    # distribution chart above, which is the readable form of them.

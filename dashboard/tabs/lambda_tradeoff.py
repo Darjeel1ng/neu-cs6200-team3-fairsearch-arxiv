@@ -217,7 +217,6 @@ def render() -> None:
         axis=1,
     )
 
-    utility_options = [c for c in ["Recall@10", "nDCG@10", "P@10", "MRR"] if c in df.columns]
     fairness_options = [
         c
         for c in [
@@ -265,25 +264,11 @@ def render() -> None:
     st.subheader("All configurations")
     st.dataframe(df, use_container_width=True, hide_index=True)
 
-    st.subheader("Utility vs. fairness, unindexed")
-    st.caption(
-        "The same data plotted directly. Utility spans a very narrow range, so "
-        "the points cluster along one axis — that flatness is the result, not a "
-        "rendering problem."
-    )
-    metric = st.selectbox("Utility metric", options=utility_options)
-
-    fig = px.scatter(
-        df,
-        x=fairness_metric,
-        y=metric,
-        text="config",
-        color="config_type",
-        symbol="config_type",
-        title=f"{metric} vs. {fairness_metric} across lambda configs",
-    )
-    fig.update_traces(textposition="top center")
-    st.plotly_chart(fig, use_container_width=True)
+    # The unindexed scatter that used to sit here plotted the same data in the
+    # form the dual-axis chart above was built to replace: utility spans such a
+    # narrow range that every point collapsed onto one axis. Keeping both meant
+    # two charts of the same thing plus a "Utility metric" selector that drove
+    # nothing else on the page.
 
     st.subheader("Diversity by config")
     st.caption(
