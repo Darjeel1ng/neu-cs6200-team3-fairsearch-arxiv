@@ -3,12 +3,17 @@ import streamlit as st
 
 from dashboard import data_loader, live_retrieval
 
+# geo_group belongs here alongside privilege_label: the audit runs on both
+# dimensions, and geo_group is the one with a measurable retrieval gap
+# (emerging SRR 0.857) while the institution tier sits near parity. Without it
+# this table cannot show the dimension the findings actually rest on.
 DOC_COLUMNS = [
     "rank",
     "document_id",
     "title",
     "score",
     "privilege_label",
+    "geo_group",
     "region",
     "country_code",
     "institution",
