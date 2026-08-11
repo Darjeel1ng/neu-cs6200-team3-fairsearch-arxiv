@@ -1,3 +1,5 @@
+import os
+
 import pandas as pd
 import streamlit as st
 
@@ -44,8 +46,12 @@ def render() -> None:
             st.dataframe(pd.DataFrame(results), use_container_width=True)
             return
         st.info("Live retrieval is active — enter a query above, or pick a precomputed one below.")
-    else:
-        st.info(live_retrieval.unavailable_reason())
+    elif os.path.isdir(live_retrieval.CHROMA_DB_PATH):
+        # chroma_db is present but the index would not open -- that is a real
+        # failure and worth surfacing. Its plain absence is not: replaying the
+        # committed 150 queries is the intended default path, and announcing it
+        # in a blue banner on the first tab reads like something is broken.
+        st.warning(live_retrieval.unavailable_reason())
 
     queries = data_loader.get_queries()
     query_labels = {

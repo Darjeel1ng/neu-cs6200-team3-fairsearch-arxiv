@@ -214,6 +214,3 @@ def render() -> None:
 
     if report.get("comparability_note"):
         st.info(report["comparability_note"])
-
-    with st.expander("Raw synthesis_eval_report.json"):
-        st.json(report)
