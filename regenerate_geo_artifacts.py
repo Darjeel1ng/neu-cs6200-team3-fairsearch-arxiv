@@ -345,7 +345,8 @@ ax.set_ylabel("share")
 ax.set_title("geo_group: baseline vs retrieved")
 ax.legend()
 fig.tight_layout()
-fig.savefig(os.path.join(FIG, "geo_baseline_vs_retrieved.png"))
+fig.savefig(os.path.join(FIG, "geo_baseline_vs_retrieved.png"),
+            dpi=300, bbox_inches="tight")
 plt.close(fig)
 
 # 7c. geo SPD / SRR (Phase 8)
